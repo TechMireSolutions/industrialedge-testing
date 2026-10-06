@@ -15,7 +15,11 @@ import {
   Award,
   Sparkles,
   Zap,
-  CheckCircle2
+  CheckCircle2,
+  Cpu,
+  Wrench,
+  HardHat,
+  FlaskConical
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
@@ -39,6 +43,85 @@ const itemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+
+const CATEGORY_STYLES: Record<string, {
+  bg: string;
+  hoverBg: string;
+  border: string;
+  hoverBorder: string;
+  iconBg: string;
+  iconColor: string;
+  textColor: string;
+  hoverTextColor: string;
+  Icon: React.ComponentType<{ className?: string }>;
+}> = {
+  "electronic-appliances": {
+    bg: "bg-blue-50/70",
+    hoverBg: "hover:bg-blue-100/70",
+    border: "border-blue-200/80",
+    hoverBorder: "hover:border-blue-400",
+    iconBg: "bg-blue-600 text-white shadow-blue-500/30",
+    iconColor: "text-blue-600",
+    textColor: "text-blue-950",
+    hoverTextColor: "group-hover:text-blue-600",
+    Icon: Cpu,
+  },
+  "hardware-tools": {
+    bg: "bg-amber-50/70",
+    hoverBg: "hover:bg-amber-100/70",
+    border: "border-amber-200/80",
+    hoverBorder: "hover:border-amber-400",
+    iconBg: "bg-amber-600 text-white shadow-amber-500/30",
+    iconColor: "text-amber-600",
+    textColor: "text-amber-950",
+    hoverTextColor: "group-hover:text-amber-600",
+    Icon: Wrench,
+  },
+  "office-supplies": {
+    bg: "bg-emerald-50/70",
+    hoverBg: "hover:bg-emerald-100/70",
+    border: "border-emerald-200/80",
+    hoverBorder: "hover:border-emerald-400",
+    iconBg: "bg-emerald-600 text-white shadow-emerald-500/30",
+    iconColor: "text-emerald-600",
+    textColor: "text-emerald-950",
+    hoverTextColor: "group-hover:text-emerald-600",
+    Icon: Briefcase,
+  },
+  "safety-equipment": {
+    bg: "bg-orange-50/70",
+    hoverBg: "hover:bg-orange-100/70",
+    border: "border-orange-200/80",
+    hoverBorder: "hover:border-orange-400",
+    iconBg: "bg-orange-600 text-white shadow-orange-500/30",
+    iconColor: "text-orange-600",
+    textColor: "text-orange-950",
+    hoverTextColor: "group-hover:text-orange-600",
+    Icon: HardHat,
+  },
+  "industrial-chemicals": {
+    bg: "bg-purple-50/70",
+    hoverBg: "hover:bg-purple-100/70",
+    border: "border-purple-200/80",
+    hoverBorder: "hover:border-purple-400",
+    iconBg: "bg-purple-600 text-white shadow-purple-500/30",
+    iconColor: "text-purple-600",
+    textColor: "text-purple-950",
+    hoverTextColor: "group-hover:text-purple-600",
+    Icon: FlaskConical,
+  },
+  "electrical-components": {
+    bg: "bg-cyan-50/70",
+    hoverBg: "hover:bg-cyan-100/70",
+    border: "border-cyan-200/80",
+    hoverBorder: "hover:border-cyan-400",
+    iconBg: "bg-cyan-600 text-white shadow-cyan-500/30",
+    iconColor: "text-cyan-600",
+    textColor: "text-cyan-950",
+    hoverTextColor: "group-hover:text-cyan-600",
+    Icon: Zap,
   },
 };
 
@@ -175,26 +258,41 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-40px" }}
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5"
           >
-            {CATEGORIES.filter((c) => c.id !== "all").map((cat, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Link
-                  href={`/products?category=${cat.id}`}
-                  className="h-full p-5 rounded-2xl bg-white hover:bg-emerald-50/80 border border-slate-200/90 hover:border-emerald-400 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-sm hover:shadow-xl"
+            {CATEGORIES.filter((c) => c.id !== "all").map((cat, idx) => {
+              const style = CATEGORY_STYLES[cat.id] || {
+                bg: "bg-white",
+                hoverBg: "hover:bg-slate-50",
+                border: "border-slate-200/90",
+                hoverBorder: "hover:border-slate-400",
+                iconBg: "bg-slate-800 text-white shadow-slate-500/20",
+                iconColor: "text-slate-700",
+                textColor: "text-slate-900",
+                hoverTextColor: "group-hover:text-slate-700",
+                Icon: ShoppingBag,
+              };
+              const IconComponent = style.Icon;
+
+              return (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[#151838]/5 border border-[#151838]/10 shadow-xs text-[#151838] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-[#151838] group-hover:to-[#059669] group-hover:text-white transition-all duration-300">
-                    <ShoppingBag className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-xs font-bold text-slate-800 group-hover:text-[#059669] line-clamp-2 transition-colors">
-                    {cat.name}
-                  </h4>
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={`/products?category=${cat.id}`}
+                    className={`h-full p-5 rounded-2xl ${style.bg} ${style.hoverBg} border ${style.border} ${style.hoverBorder} transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-xs hover:shadow-lg`}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl ${style.iconBg} shadow-md flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="w-6 h-6 stroke-[2.2]" />
+                    </div>
+                    <h4 className={`text-xs font-black ${style.textColor} ${style.hoverTextColor} line-clamp-2 transition-colors`}>
+                      {cat.name}
+                    </h4>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
