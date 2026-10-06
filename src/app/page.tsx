@@ -17,7 +17,6 @@ import {
   FlaskConical, 
   Zap, 
   ShoppingBag,
-  Sparkles,
   ChevronRight,
   Flame
 } from "lucide-react";
@@ -56,8 +55,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
-                  <Sparkles className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
                   Pakistan&apos;s Leading B2B Industrial E-Store
                 </div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-4">
