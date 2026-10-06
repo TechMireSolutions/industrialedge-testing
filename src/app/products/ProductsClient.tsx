@@ -42,13 +42,13 @@ export default function ProductsClient() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         {/* Breadcrumb / Title */}
         <div className="mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
             E-Commerce Store & Catalog
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 mt-1">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">
             Industrial Supplies & Equipment
           </h1>
           <p className="text-slate-600 text-sm mt-2">

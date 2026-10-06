@@ -148,9 +148,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Bar */}
+      {/* Categories Bar (Full Width & Clean) */}
       <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">
               Shop by Department
@@ -160,12 +160,12 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
             {CATEGORIES.filter((c) => c.id !== "all").map((cat, idx) => (
               <Link
                 key={idx}
                 href={`/products?category=${cat.id}`}
-                className="p-5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-200 transition-all duration-200 group text-center flex flex-col items-center justify-center"
+                className="p-5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-200 transition-all duration-200 group text-center flex flex-col items-center justify-center shadow-2xs hover:shadow-xs"
               >
                 <div className="w-12 h-12 rounded-xl bg-white shadow-xs text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <ShoppingBag className="w-6 h-6" />
@@ -179,9 +179,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products E-Commerce Grid */}
+      {/* Featured Products E-Commerce Grid (Full Width) */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
               <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1">
@@ -207,12 +207,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Flash Discount Banners */}
-      <section className="py-10 bg-slate-100/70 border-y border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Flash Discount Banners (Full Width) */}
+      <section className="py-12 bg-slate-100/70 border-y border-slate-200/60">
+        <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex items-center gap-2 mb-6">
             <Flame className="w-5 h-5 text-red-600" />
-            <h3 className="text-xl font-black text-slate-900">
+            <h3 className="text-xl font-bold text-slate-900">
               Bulk Wholesale Specials
             </h3>
           </div>
@@ -225,9 +225,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Value Badges Banner */}
+      {/* Value Badges Banner (Full Width) */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
               <div className="p-3 bg-blue-100 text-blue-600 rounded-xl shrink-0">
@@ -272,10 +272,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand Partners Bar */}
+      {/* Brand Partners Bar (Full Width) */}
       <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs uppercase font-extrabold text-slate-400 tracking-wider mb-6">
+        <div className="w-full px-4 sm:px-8 lg:px-12 text-center">
+          <p className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-6">
             Supplying Products From Leading Industrial Brands
           </p>
           <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 items-center">

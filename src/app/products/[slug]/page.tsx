@@ -40,7 +40,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <div className="bg-slate-50 min-h-screen py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         {/* Breadcrumb */}
         <nav className="flex items-center space-x-2 text-xs text-gray-500 mb-8">
           <Link href="/" className="hover:text-blue-600">Home</Link>
