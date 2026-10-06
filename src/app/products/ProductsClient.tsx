@@ -42,32 +42,40 @@ export default function ProductsClient() {
   }, [selectedCategory, searchTerm, sortBy]);
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen py-10 selection:bg-[#059669] selection:text-white">
-      <div className="w-full px-4 sm:px-8 lg:px-12">
-        {/* Breadcrumb / Title with Fade In */}
-        <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-8"
-        >
-          <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">
-            E-Commerce Store & Catalog
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#151838] mt-1">
-            Industrial Supplies & Equipment
-          </h1>
-          <p className="text-slate-600 text-sm mt-2">
-            Order certified enterprise products with wholesale pricing, warranty backing, and nationwide dispatch.
-          </p>
-        </motion.div>
+    <div className="bg-gradient-to-b from-slate-100 via-slate-50 to-[#f8fafc] min-h-screen pb-16 selection:bg-[#059669] selection:text-white">
+      {/* Brand Hero Header Banner */}
+      <div className="relative bg-[#151838] text-white overflow-hidden py-12 lg:py-16 mb-8 border-b border-[#1e2352]">
+        {/* Ambient brand colored glowing orbs */}
+        <div className="absolute -top-12 -left-12 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Filter & Search Bar */}
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3 shadow-xs">
+              E-Commerce Store & Catalog
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Industrial Supplies & Equipment
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+              Order certified enterprise products with wholesale pricing, warranty backing, and nationwide dispatch across Pakistan.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="w-full px-4 sm:px-8 lg:px-12">
+        {/* Filter & Search Bar with Brand Accents */}
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-xs mb-8"
+          className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-md shadow-slate-200/50 mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             {/* Search Input */}
