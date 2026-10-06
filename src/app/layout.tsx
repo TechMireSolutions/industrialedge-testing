@@ -20,6 +20,13 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Industrial Edge - Online B2B Industrial & Corporate Store Pakistan",
   description: "Browse and order certified industrial tools, electronics, PPE safety equipment, cables, chemicals, and office supplies online across Pakistan.",
+  icons: {
+    icon: [
+      { url: "/logo-icon.webp", type: "image/webp" },
+    ],
+    shortcut: "/logo-icon.webp",
+    apple: "/logo-icon.webp",
+  },
 };
 
 export default function RootLayout({
