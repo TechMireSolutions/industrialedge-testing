@@ -20,10 +20,10 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col justify-center text-left">
-                <span className="text-[19px] font-black tracking-tight text-white leading-none">
+                <span className="font-logo text-[18px] font-bold tracking-tight text-white leading-tight">
                   Industrial Edge
                 </span>
-                <span className="text-[11px] font-medium text-slate-400 tracking-wide mt-1 leading-none">
+                <span className="font-logo text-[10px] font-medium text-slate-400 tracking-wider leading-tight mt-0.5">
                   Fulfillment Guaranteed
                 </span>
               </div>

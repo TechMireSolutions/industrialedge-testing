@@ -55,11 +55,11 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3.5 h-3.5" />
                   Pakistan&apos;s Leading B2B Industrial E-Store
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
                   Procure Industrial Gear, Tools & Supplies <span className="text-blue-500">Online</span>
                 </h1>
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl">
@@ -84,15 +84,15 @@ export default function HomePage() {
                 {/* Highlights */}
                 <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-800/80 text-xs">
                   <div>
-                    <span className="font-extrabold text-lg text-white block">10,000+</span>
+                    <span className="font-bold text-base text-white block">10,000+</span>
                     <span className="text-slate-400">Available SKUs</span>
                   </div>
                   <div>
-                    <span className="font-extrabold text-lg text-white block">24 - 48 Hrs</span>
+                    <span className="font-bold text-base text-white block">24 - 48 Hrs</span>
                     <span className="text-slate-400">Nationwide Dispatch</span>
                   </div>
                   <div>
-                    <span className="font-extrabold text-lg text-white block">100% Tax</span>
+                    <span className="font-bold text-base text-white block">100% Tax</span>
                     <span className="text-slate-400">FBR GST Invoices</span>
                   </div>
                 </div>
@@ -152,10 +152,10 @@ export default function HomePage() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-black text-slate-900 tracking-tight">
+            <h2 className="text-xl font-bold text-slate-900 tracking-tight">
               Shop by Department
             </h2>
-            <Link href="/products" className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">
+            <Link href="/products" className="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
               All Departments <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-xl bg-white shadow-xs text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <ShoppingBag className="w-6 h-6" />
                 </div>
-                <h4 className="text-xs font-bold text-slate-900 group-hover:text-blue-600 line-clamp-2">
+                <h4 className="text-xs font-semibold text-slate-800 group-hover:text-blue-600 line-clamp-2">
                   {cat.name}
                 </h4>
               </Link>
@@ -184,16 +184,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">
+              <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1">
                 Top Rated Sourcing
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                 Trending Industrial Supplies
               </h2>
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-blue-500 rounded-xl text-xs font-bold text-slate-800 transition"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-blue-500 rounded-xl text-xs font-semibold text-slate-700 transition"
             >
               Browse Full Catalog <ArrowRight className="w-3.5 h-3.5" />
             </Link>

@@ -65,7 +65,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20 gap-4">
           {/* Brand Logo with Icon + Custom Typography */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative w-11 h-11 shrink-0 flex items-center justify-center">
+            <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
               <Image
                 src="/logo-icon.webp"
                 alt="Industrial Edge Logo"
@@ -75,10 +75,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-[20px] font-black tracking-tight text-[#1e428a] leading-none">
+              <span className="font-logo text-[19px] font-bold tracking-tight text-[#1e428a] leading-tight">
                 Industrial Edge
               </span>
-              <span className="text-[11px] font-medium text-slate-500 tracking-wide mt-1 leading-none">
+              <span className="font-logo text-[10.5px] font-medium text-slate-500 tracking-wider leading-tight">
                 Fulfillment Guaranteed
               </span>
             </div>
@@ -107,17 +107,17 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-[15px] font-semibold tracking-normal">
+          <nav className="hidden lg:flex items-center space-x-7 text-sm font-medium">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`transition duration-150 py-1 border-b-2 ${
+                  className={`transition duration-150 py-1 ${
                     isActive
-                      ? "text-[#1e428a] font-bold border-[#ea580c]"
-                      : "text-slate-700 hover:text-[#1e428a] border-transparent"
+                      ? "text-blue-600 font-semibold"
+                      : "text-slate-600 hover:text-blue-600"
                   }`}
                 >
                   {item.name}
