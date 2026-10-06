@@ -122,24 +122,32 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             </span>
           </div>
 
-          {/* Add to Cart button */}
+          {/* Add to Cart button with hover slide animation */}
           <motion.button
-            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             onClick={handleAdd}
-            className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all duration-200 shadow-xs cursor-pointer ${
+            className={`cart-animated-btn w-full h-10 px-4 rounded-xl font-bold text-xs shadow-xs cursor-pointer transition-colors duration-300 ${
               added
                 ? "bg-emerald-600 text-white shadow-emerald-500/25"
                 : "bg-slate-900 hover:bg-blue-600 text-white hover:shadow-blue-500/25 hover:shadow-md"
             }`}
           >
             {added ? (
-              <>
+              <span className="flex items-center justify-center gap-1.5 w-full h-full">
                 <Check className="w-4 h-4 animate-bounce" /> Added to Order
-              </>
+              </span>
             ) : (
               <>
-                <ShoppingCart className="w-4 h-4" /> Add to Order
+                {/* Default Text Track */}
+                <div className="btn-text-track flex items-center justify-center gap-1.5 font-bold text-xs">
+                  <ShoppingCart className="w-3.5 h-3.5 opacity-90" />
+                  <span>Add to Order</span>
+                </div>
+
+                {/* Hover Icon Track (Slides up into view) */}
+                <div className="btn-icon-track flex items-center justify-center text-white">
+                  <ShoppingCart className="w-5 h-5 transform scale-110" />
+                </div>
               </>
             )}
           </motion.button>

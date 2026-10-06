@@ -36,3 +36,41 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ========================================================
+   Interactive Cart Button Hover Slide Animation (Uiverse.io inspired)
+   Color scheme and branding preserved
+   ======================================================== */
+.cart-animated-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cart-animated-btn .btn-text-track,
+.cart-animated-btn .btn-icon-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-animated-btn .btn-text-track {
+  transform: translateY(0%);
+}
+
+.cart-animated-btn .btn-icon-track {
+  transform: translateY(100%);
+}
+
+.cart-animated-btn:hover .btn-text-track {
+  transform: translateY(-100%);
+}
+
+.cart-animated-btn:hover .btn-icon-track {
+  transform: translateY(0%);
+}

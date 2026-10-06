@@ -148,19 +148,28 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <button
                   onClick={handleAddToCart}
-                  className={`w-full py-3.5 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all duration-200 ${
+                  className={`cart-animated-btn w-full h-12 px-6 rounded-xl font-bold text-sm shadow-md transition-all duration-300 cursor-pointer ${
                     added
-                      ? "bg-emerald-600 text-white"
-                      : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-blue-500/20"
+                      ? "bg-emerald-600 text-white shadow-emerald-500/25"
+                      : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-blue-500/30"
                   }`}
                 >
                   {added ? (
-                    <>
-                      <Check className="w-5 h-5" /> Added to Cart!
-                    </>
+                    <span className="flex items-center justify-center gap-2 w-full h-full">
+                      <Check className="w-5 h-5 animate-bounce" /> Added to Cart!
+                    </span>
                   ) : (
                     <>
-                      <ShoppingCart className="w-5 h-5" /> Add to Order Cart
+                      {/* Default Text Track */}
+                      <div className="btn-text-track flex items-center justify-center gap-2 font-bold text-sm">
+                        <ShoppingCart className="w-5 h-5" />
+                        <span>Add to Order Cart</span>
+                      </div>
+
+                      {/* Hover Slide Icon Track */}
+                      <div className="btn-icon-track flex items-center justify-center text-white">
+                        <ShoppingCart className="w-6 h-6 transform scale-125" />
+                      </div>
                     </>
                   )}
                 </button>
