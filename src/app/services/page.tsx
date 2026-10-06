@@ -117,9 +117,21 @@ export default function ServicesPage() {
                     </ul>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-lg shadow-sm transition gap-2"
+                      className="category-arrow-btn"
                     >
-                      Inquire About {domain.title.split("&")[0]} <ArrowRight className="w-4 h-4" />
+                      <span>Inquire About {domain.title.split("&")[0].trim()}</span>
+                      <span className="btn-arrow-icon">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          strokeWidth="2" 
+                          stroke="currentColor" 
+                          className="w-4 h-4"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                        </svg>
+                      </span>
                     </Link>
                   </div>
 
