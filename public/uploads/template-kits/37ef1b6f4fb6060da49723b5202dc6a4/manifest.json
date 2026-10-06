@@ -1,0 +1,877 @@
+{
+    "manifest_version": "1.0.21",
+    "title": "Coorp",
+    "page_builder": "elementor",
+    "kit_version": "1.1",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/demo.sociolib.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home 2",
+            "screenshot": "screenshots\/home-2.jpg",
+            "source": "templates\/home-2.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/home-2\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home 3",
+            "screenshot": "screenshots\/home-3.jpg",
+            "source": "templates\/home-3.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/home-3\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.jpg",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "What We Do",
+            "screenshot": "screenshots\/what-we-do.jpg",
+            "source": "templates\/what-we-do.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/what-we-do\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing",
+            "screenshot": "screenshots\/pricing.jpg",
+            "source": "templates\/pricing.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Portfolio",
+            "screenshot": "screenshots\/portfolio.jpg",
+            "source": "templates\/portfolio.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/portfolio\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "News",
+            "screenshot": "screenshots\/news.jpg",
+            "source": "templates\/news.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/news\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Post",
+            "screenshot": "screenshots\/post.jpg",
+            "source": "templates\/post.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/post\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Off Canvas",
+            "screenshot": "screenshots\/off-canvas.jpg",
+            "source": "templates\/off-canvas.json",
+            "preview_url": "https:\/\/demo.sociolib.com\/coorp\/template-kit\/off-canvas\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.2.0",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Qi Addons for Elementor",
+            "version": "1.7.6",
+            "file": "qi-addons-for-elementor\/class-qiaddonsforelementor.php",
+            "author": "Qode Interactive"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.21.8",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "coorplogo.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorplogo.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 2852,
+            "dimensions": [
+                180,
+                35
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "coorpsblack.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorpsblack.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/off-canvas.json",
+                    "name": "Off Canvas"
+                }
+            ],
+            "filesize": 3241,
+            "dimensions": [
+                180,
+                35
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "coorp-1.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-1-800x508.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                }
+            ],
+            "filesize": 411184,
+            "dimensions": [
+                1920,
+                1220
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-successful-man-with-mobile-in-urban-ba-99ANN5R"
+        },
+        {
+            "filename": "coorp-2.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 182764,
+            "dimensions": [
+                800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-man-working-with-laptop-PJBVNCK"
+        },
+        {
+            "filename": "coorp-3.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 227003,
+            "dimensions": [
+                800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/man-working-online-2WTPWPN"
+        },
+        {
+            "filename": "coorp-4.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-4-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 393946,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/man-working-on-computer-ECXNXWN"
+        },
+        {
+            "filename": "btrans.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/btrans.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 12908,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "coorp-5.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-5-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 293082,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/man-working-on-the-phone-GFKN55W"
+        },
+        {
+            "filename": "coorp-6.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-6-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 403542,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/man-working-on-a-computer-4Q8F58U"
+        },
+        {
+            "filename": "coorp-7.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-7-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 304686,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/business-company-employee-smiling-at-his-workplace-9WTR46Q"
+        },
+        {
+            "filename": "lg3-e1637968206893.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/lg3-e1637968206893.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 5573,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/logo-brand-identity-pack-6LBGSZ"
+        },
+        {
+            "filename": "lg1-e1637968309556.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/lg1-e1637968309556.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 6061,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/logo-brand-identity-pack-6LBGSZ"
+        },
+        {
+            "filename": "lg4-e1637968341836.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/lg4-e1637968341836.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 9849,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/logo-brand-identity-pack-6LBGSZ"
+        },
+        {
+            "filename": "lg2-e1637968370178.png",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/lg2-e1637968370178.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 8068,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/logo-brand-identity-pack-6LBGSZ"
+        },
+        {
+            "filename": "coorp-8.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-8-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/post.json",
+                    "name": "Post"
+                }
+            ],
+            "filesize": 286287,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/business-F49S3QE"
+        },
+        {
+            "filename": "coorp-12.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-12.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 141125,
+            "dimensions": [
+                800,
+                1198
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/E4s8t8EfDu4"
+        },
+        {
+            "filename": "coorp-9.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-9.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 261439,
+            "dimensions": [
+                800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-successful-man-with-mobile-in-urban-ba-99ANN5R"
+        },
+        {
+            "filename": "post4.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/post4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                }
+            ],
+            "filesize": 270921,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/PhYq704ffdA"
+        },
+        {
+            "filename": "coorp-14.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-14.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 185533,
+            "dimensions": [
+                800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/man-working-from-home-VALXZ8G"
+        },
+        {
+            "filename": "coorp-15.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-15.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-3.json",
+                    "name": "Home 3"
+                }
+            ],
+            "filesize": 138037,
+            "dimensions": [
+                800,
+                1094
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/handsome-man-working-9XZCH59"
+        },
+        {
+            "filename": "coorp-13.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-13-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                },
+                {
+                    "source": "templates\/news.json",
+                    "name": "News"
+                }
+            ],
+            "filesize": 272717,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/business-partnership-shaking-hands-for-signing-com-696P3BC"
+        },
+        {
+            "filename": "towfiqu-barbhuiya-nApaSgkzaxg-unsplash.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/towfiqu-barbhuiya-nApaSgkzaxg-unsplash.jpg",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do.json",
+                    "name": "What We Do"
+                }
+            ],
+            "filesize": 206506,
+            "dimensions": [
+                1920,
+                1281
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/nApaSgkzaxg"
+        },
+        {
+            "filename": "post2.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/post2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do.json",
+                    "name": "What We Do"
+                },
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 167144,
+            "dimensions": [
+                1200,
+                801
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/9fByQORuvqM"
+        },
+        {
+            "filename": "post5.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/post5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do.json",
+                    "name": "What We Do"
+                }
+            ],
+            "filesize": 130605,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/dr9Dp1RVYgQ"
+        },
+        {
+            "filename": "green-chameleon-s9CC2SKySJM-unsplash.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/green-chameleon-s9CC2SKySJM-unsplash.jpg",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do.json",
+                    "name": "What We Do"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 221093,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/s9CC2SKySJM"
+        },
+        {
+            "filename": "cardmapr-9fByQORuvqM-unsplash.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/cardmapr-9fByQORuvqM-unsplash-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 322244,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/9fByQORuvqM"
+        },
+        {
+            "filename": "coorp-16.jpg",
+            "thumbnail_url": "https:\/\/demo.sociolib.com\/coorp\/wp-content\/uploads\/sites\/10\/2021\/11\/coorp-16-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/portfolio.json",
+                    "name": "Portfolio"
+                }
+            ],
+            "filesize": 251864,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/businessman-reading-agreement-on-table-6JDG9FJ"
+        }
+    ]
+}
