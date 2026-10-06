@@ -109,21 +109,44 @@ export default function Navbar() {
             </form>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-sm font-medium">
+          {/* Desktop Navigation Links with Animated Border and Background reveal */}
+          <nav className="hidden lg:flex items-center space-x-2 text-sm font-semibold">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`transition duration-150 py-1 ${
-                    isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-slate-600 hover:text-blue-600"
-                  }`}
+                  className="relative inline-block group px-3.5 py-1.5 overflow-hidden rounded-md transition-colors"
                 >
-                  {item.name}
+                  {/* Link Text */}
+                  <span
+                    className={`relative z-10 block transition-colors duration-300 ${
+                      isActive
+                        ? "text-blue-600 font-bold"
+                        : "text-slate-700 group-hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
+
+                  {/* Top & Bottom Border Animation (Brand Blue) */}
+                  <span
+                    className={`absolute inset-0 border-t-2 border-b-2 border-blue-600 pointer-events-none transition-all duration-300 origin-center ${
+                      isActive
+                        ? "scale-y-100 opacity-100"
+                        : "transform scale-y-[2] opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                    }`}
+                  />
+
+                  {/* Background Fill Animation (Brand Blue) */}
+                  <span
+                    className={`absolute inset-0 bg-blue-600 pointer-events-none transition-all duration-300 origin-top ${
+                      isActive
+                        ? "scale-100 opacity-10 bg-blue-50"
+                        : "transform scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"
+                    }`}
+                  />
                 </Link>
               );
             })}
