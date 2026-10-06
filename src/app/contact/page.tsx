@@ -103,6 +103,45 @@ export default function ContactPage() {
                     <p className="text-xs text-slate-500 mt-0.5">Response within 24 business hours</p>
                   </div>
                 </div>
+
+                {/* Social Channels Box */}
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                  <h4 className="font-bold text-[#151838] text-sm mb-3">Official Corporate Handles</h4>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://linkedin.com/company/industrial-edge-pk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href="https://facebook.com/industrialedge.pk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                    >
+                      Facebook
+                    </a>
+                    <a
+                      href="https://wa.me/923322316225"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-[#059669] text-[#059669] hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-emerald-200/60"
+                    >
+                      WhatsApp
+                    </a>
+                    <a
+                      href="https://instagram.com/industrialedge.pk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                    >
+                      Instagram
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
