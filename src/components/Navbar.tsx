@@ -35,9 +35,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-100">
-      {/* Top Banner */}
+      {/* Top Banner (Full Screen Width) */}
       <div className="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="w-full px-2 sm:px-4 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-1.5 text-blue-400 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" /> Direct Industrial Sourcing & Corporate Bulk Pricing
@@ -60,12 +60,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Nav */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Main Nav (Full Screen Width) */}
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20 gap-4">
-          {/* Brand Logo with Icon + Custom Typography */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
+          {/* Brand Logo with Larger Icon + Same Text Size */}
+          <Link href="/" className="flex items-center gap-3.5 shrink-0 group py-1">
+            <div className="relative w-14 h-14 shrink-0 flex items-center justify-center">
               <Image
                 src="/logo-icon.webp"
                 alt="Industrial Edge Logo"
