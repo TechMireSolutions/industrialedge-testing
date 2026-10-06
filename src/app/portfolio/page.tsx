@@ -78,17 +78,20 @@ export default function PortfolioPage() {
   return (
     <div>
       {/* Banner */}
-      <section className="bg-slate-900 text-white py-16 sm:py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#151838] text-white py-16 sm:py-24 relative overflow-hidden border-b border-[#1e2352]">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-blue-400 font-semibold tracking-wider uppercase text-xs">Our Track Record</span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white mt-2">Portfolio & Partner Brands</h1>
-            <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs">
+              Our Track Record
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-black text-white mt-3 tracking-tight">Portfolio & Partner Brands</h1>
+            <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
               Discover our proven delivery capability and the extensive network of industrial brands we supply.
             </p>
           </motion.div>
@@ -96,7 +99,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Case studies */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -105,8 +108,8 @@ export default function PortfolioPage() {
             transition={{ duration: 0.4 }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-xs">Recent Highlights</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 sm:text-4xl">Featured Procurement Deliveries</h2>
+            <span className="text-[#059669] font-bold tracking-wider uppercase text-xs">Recent Highlights</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#151838] mt-2 tracking-tight">Featured Procurement Deliveries</h2>
           </motion.div>
 
           <motion.div 
@@ -121,7 +124,7 @@ export default function PortfolioPage() {
                 key={idx} 
                 variants={itemVariants}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col group"
               >
                 <div className="relative aspect-16/10 overflow-hidden">
                   <Image
@@ -133,16 +136,16 @@ export default function PortfolioPage() {
                 </div>
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
-                    <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-2">{p.category}</span>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">{p.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-6">{p.desc}</p>
+                    <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-2">{p.category}</span>
+                    <h3 className="text-lg font-bold text-[#151838] mb-3 group-hover:text-[#059669] transition-colors">{p.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-6">{p.desc}</p>
                   </div>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 gap-1 mt-auto group/link"
+                    className="inline-flex items-center text-xs font-bold text-[#059669] hover:text-[#047857] gap-1.5 mt-auto group/link"
                   >
                     Request Similar Supplies 
-                    <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </motion.div>
@@ -152,7 +155,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Partner Brands Grid with Staggered Fade In */}
-      <section className="py-20 bg-slate-50 border-t border-slate-100">
+      <section className="py-20 bg-slate-100 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -160,9 +163,9 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-xs">Certified Sourcing</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 sm:text-4xl">Brands & Partners We Supply</h2>
-            <p className="text-gray-600 mt-4 text-base">
+            <span className="text-[#059669] font-bold tracking-wider uppercase text-xs">Certified Sourcing</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#151838] mt-2 tracking-tight">Brands & Partners We Supply</h2>
+            <p className="text-slate-600 mt-4 text-base">
               We procure and distribute products from industry-leading global and local manufacturers.
             </p>
           </motion.div>
@@ -179,7 +182,7 @@ export default function PortfolioPage() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ scale: 1.06, y: -3, transition: { duration: 0.2 } }}
-                className="bg-white p-4 rounded-xl border border-gray-100 shadow-2xs flex items-center justify-center h-24 hover:shadow-md transition-all duration-200 cursor-pointer"
+                className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-center h-24 hover:shadow-lg hover:border-emerald-300 transition-all duration-200 cursor-pointer"
               >
                 <div className="relative w-full h-full">
                   <Image

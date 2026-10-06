@@ -68,7 +68,10 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Banner */}
-      <section className="bg-slate-900 text-white py-16 sm:py-24 relative overflow-hidden">
+      <section className="bg-[#151838] text-white py-16 sm:py-24 relative overflow-hidden border-b border-[#1e2352]">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
+
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2025/03/kseniia-ilinykh-82ZiY5pzl1c-unsplash-scaled.jpg"
@@ -77,18 +80,20 @@ export default function ServicesPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e2352]/80"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-blue-400 font-semibold tracking-wider uppercase text-xs">Our Capabilities</span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mt-2">Core Supply Domains</h1>
-          <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs">
+            Our Capabilities
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-black text-white mt-3 tracking-tight">Core Supply Domains</h1>
+          <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
             Industrial Edge simplifies procurement for businesses across Pakistan. With 100+ vetted manufacturers, we source everything your operation demands.
           </p>
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-20 bg-white">
+      {/* Services List with Alternating Industrial Slate Surfaces */}
+      <section className="py-20 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {domains.map((domain, idx) => {
@@ -97,20 +102,20 @@ export default function ServicesPage() {
               return (
                 <div
                   key={idx}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 rounded-2xl bg-slate-50 border border-slate-100 ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 ${
                     isEven ? "" : "lg:flex-row-reverse"
                   }`}
                 >
                   <div className={isEven ? "order-1" : "order-1 lg:order-2"}>
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#151838] to-[#059669] text-white flex items-center justify-center mb-6 shadow-md shadow-emerald-950/20">
+                      <Icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{domain.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">{domain.desc}</p>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#151838] mb-3">{domain.title}</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6 text-sm sm:text-base">{domain.desc}</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {domain.items.map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-gray-700 font-medium">
-                          <Check className="w-4 h-4 text-blue-600 shrink-0" />
+                        <li key={i} className="flex items-center gap-2 text-sm text-slate-700 font-medium">
+                          <Check className="w-4 h-4 text-[#059669] shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -135,12 +140,12 @@ export default function ServicesPage() {
                     </Link>
                   </div>
 
-                  <div className={`relative aspect-4/3 rounded-xl overflow-hidden shadow-md ${isEven ? "order-2" : "order-2 lg:order-1"}`}>
+                  <div className={`relative aspect-4/3 rounded-2xl overflow-hidden shadow-lg border-2 border-slate-100 ${isEven ? "order-2" : "order-2 lg:order-1"}`}>
                     <Image
                       src={domain.image}
                       alt={domain.title}
                       fill
-                      className="object-cover"
+                      className="object-cover transform hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
@@ -151,17 +156,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Procurement Services Highlight */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
-          <span className="text-blue-400 font-semibold tracking-wider uppercase text-xs">Total Sourcing Solution</span>
-          <h2 className="text-3xl font-bold mt-2 sm:text-4xl text-white">Custom Orders & Bulk Sourcing</h2>
-          <p className="text-slate-300 mt-4 leading-relaxed">
+      <section className="py-20 bg-[#151838] text-white relative overflow-hidden border-t border-[#1e2352]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] bg-[#059669]/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto relative z-10">
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 font-bold tracking-wider uppercase text-xs">
+            Total Sourcing Solution
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black mt-3 text-white">Custom Orders & Bulk Sourcing</h2>
+          <p className="text-slate-300 mt-4 leading-relaxed text-sm sm:text-base">
             Need rare industrial machinery parts or specialized items not listed above? Our dedicated sourcing team can procure exact specification items internationally or from regional industrial hubs across Pakistan.
           </p>
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition"
+              className="inline-flex items-center px-8 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold rounded-xl shadow-lg shadow-emerald-700/30 transition"
             >
               Submit Custom Request
             </Link>

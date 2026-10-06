@@ -35,7 +35,10 @@ export default function WhatWeDoPage() {
   return (
     <div>
       {/* Banner */}
-      <section className="bg-slate-900 text-white py-16 sm:py-24 relative overflow-hidden">
+      <section className="bg-[#151838] text-white py-16 sm:py-24 relative overflow-hidden border-b border-[#1e2352]">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
+
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2025/02/towfiqu-barbhuiya-nApaSgkzaxg-unsplash.jpg"
@@ -44,48 +47,50 @@ export default function WhatWeDoPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e2352]/80"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-blue-400 font-semibold tracking-wider uppercase text-xs">Our Value Engine</span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mt-2">What We Do</h1>
-          <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs">
+            Our Value Engine
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-black text-white mt-3 tracking-tight">What We Do</h1>
+          <p className="text-slate-300 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
             We bridge the gap between industrial manufacturers, corporate offices, and reliable supply chains across Pakistan.
           </p>
         </div>
       </section>
 
       {/* Main Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <span className="text-blue-600 font-semibold tracking-wider uppercase text-xs">Transforming Operations</span>
-              <h2 className="text-3xl font-bold text-gray-900 mt-2 sm:text-4xl mb-6">
+              <span className="text-[#059669] font-bold tracking-wider uppercase text-xs">Transforming Operations</span>
+              <h2 className="text-3xl font-extrabold text-[#151838] mt-2 sm:text-4xl mb-6">
                 End-to-End Procurement Lifecycle
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6 text-sm sm:text-base">
                 Most companies lose hours every week negotiating with multiple local shopkeepers, dealing with unvetted qualities, and handling inconsistent invoices.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6 text-sm sm:text-base">
                 Industrial Edge acts as your off-site procurement department. We source, negotiate wholesale pricing, verify quality standards, inspect packaging, and deliver directly to your designated facility.
               </p>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-800 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                  <CheckCircle2 className="w-5 h-5 text-[#059669]" />
                   <span>Guaranteed authentic parts & genuine brands</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-800 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                  <CheckCircle2 className="w-5 h-5 text-[#059669]" />
                   <span>Single unified monthly statement & tax credit invoices</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-800 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                  <CheckCircle2 className="w-5 h-5 text-[#059669]" />
                   <span>Rapid replacement guarantee for any discrepancies</span>
                 </div>
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-4/3">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-4/3 border-4 border-white">
               <Image
                 src="/uploads/2025/02/post2.jpg"
                 alt="Procurement in action"
@@ -99,12 +104,12 @@ export default function WhatWeDoPage() {
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
-                <div key={i} className="p-8 rounded-xl bg-slate-50 border border-slate-100 hover:shadow-sm transition">
-                  <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6" />
+                <div key={i} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition group">
+                  <div className="w-14 h-14 rounded-2xl bg-[#151838]/5 text-[#151838] group-hover:bg-gradient-to-r group-hover:from-[#151838] group-hover:to-[#059669] group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 shadow-xs">
+                    <Icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{f.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+                  <h3 className="text-xl font-bold text-[#151838] group-hover:text-[#059669] mb-3 transition-colors">{f.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               );
             })}
@@ -112,16 +117,19 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold sm:text-4xl">Have a procurement list ready?</h2>
-          <p className="text-blue-100 mt-3 mb-8">
+      {/* CTA Banner */}
+      <section className="py-20 bg-[#151838] text-white text-center relative overflow-hidden border-t border-[#1e2352]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mx-auto relative z-10">
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 font-bold tracking-wider uppercase text-xs">
+            Ready to Begin?
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black mt-3 text-white">Have a procurement list ready?</h2>
+          <p className="text-slate-300 mt-4 mb-8 text-sm sm:text-base leading-relaxed">
             Send us your BOQ or items list and let our team provide an unbeatable quotation within 24 hours.
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3.5 bg-white text-blue-600 font-bold rounded-lg shadow hover:bg-slate-100 transition inline-block"
+            className="px-8 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold rounded-xl shadow-lg shadow-emerald-700/30 transition inline-block"
           >
             Submit Your BOQ Now
           </Link>
