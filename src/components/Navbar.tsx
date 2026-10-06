@@ -36,11 +36,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-100">
       {/* Top Banner (Full Screen Width) */}
-      <div className="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div className="w-full px-2 sm:px-4 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-blue-400 font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5" /> Direct Industrial Sourcing & Corporate Bulk Pricing
+      <div className="bg-slate-950 text-slate-300 text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-800">
+        <div className="w-full px-1 sm:px-4 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-2">
+          {/* Main message */}
+          <div className="flex items-center justify-center sm:justify-start w-full sm:w-auto space-x-6">
+            <span className="flex items-center justify-center gap-1.5 text-blue-400 font-semibold text-[11px] sm:text-xs text-center">
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0" /> Direct Industrial Sourcing & Corporate Bulk Pricing
             </span>
             <div className="hidden lg:flex items-center gap-1.5 text-slate-400">
               <Phone className="w-3.5 h-3.5 text-slate-500" />
@@ -51,9 +52,11 @@ export default function Navbar() {
               <span>info@industrialedge.pk</span>
             </div>
           </div>
-          <div className="flex items-center gap-4 text-[11px] text-slate-400">
+
+          {/* Location & RFQ link - Clean on mobile */}
+          <div className="hidden sm:flex items-center gap-4 text-[11px] text-slate-400">
             <span>Karachi Head Office | Nationwide Delivery</span>
-            <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-medium">
+            <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-medium shrink-0">
               Submit Corporate RFQ →
             </Link>
           </div>
