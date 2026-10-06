@@ -124,13 +124,12 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* Add to Cart button */}
           <motion.button
-            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             onClick={handleAdd}
-            className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all duration-200 shadow-xs cursor-pointer ${
+            className={`btn-animated w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all duration-200 shadow-xs cursor-pointer ${
               added
                 ? "bg-emerald-600 text-white shadow-emerald-500/25"
-                : "bg-slate-900 hover:bg-blue-600 text-white hover:shadow-blue-500/25 hover:shadow-md"
+                : "bg-slate-900 hover:bg-blue-600 text-white hover:shadow-blue-500/25"
             }`}
           >
             {added ? (

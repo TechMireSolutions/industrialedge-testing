@@ -36,3 +36,69 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Modern Animated Conic Shimmer Button (Adapted from Uiverse without changing design/colors) */
+@keyframes conicSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-animated {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-animated:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-animated:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Rotating conic shimmer border glow */
+.btn-animated::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 65%,
+    rgba(255, 255, 255, 0.45) 85%,
+    transparent 100%
+  );
+  animation: conicSpin 2.5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.btn-animated:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+/* Subtle inner gloss highlight */
+.btn-animated::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: inherit;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-animated > * {
+  position: relative;
+  z-index: 2;
+}

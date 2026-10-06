@@ -356,7 +356,7 @@ export default function CheckoutPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-black text-xs rounded-xl shadow-md hover:shadow-blue-500/20 transition flex items-center justify-center gap-2"
+                    className="btn-animated w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-black text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Lock className="w-4 h-4" /> Place Formal Procurement Order
                   </button>

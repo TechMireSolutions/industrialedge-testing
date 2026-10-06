@@ -148,14 +148,14 @@ export default function CartDrawer() {
                   <Link
                     href="/checkout"
                     onClick={() => setIsCartOpen(false)}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition duration-200"
+                    className="btn-animated w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-md"
                   >
                     Checkout <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/contact"
                     onClick={() => setIsCartOpen(false)}
-                    className="w-full inline-flex items-center justify-center py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl shadow-sm transition duration-200"
+                    className="btn-animated w-full inline-flex items-center justify-center py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl shadow-sm"
                   >
                     Request B2B RFQ
                   </Link>
