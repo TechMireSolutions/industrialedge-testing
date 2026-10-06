@@ -112,3 +112,50 @@ body {
 .category-arrow-btn:hover .btn-arrow-icon {
   transform: translateX(6px);
 }
+
+/* ========================================================
+   Animated Hamburger to Cross Morph (Uiverse.io inspired)
+   ======================================================== */
+.animated-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.animated-hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #1e293b;
+  border-radius: 9999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Top bar morph */
+.animated-hamburger.is-open .bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(-45deg);
+  background-color: #2563eb;
+  transition-delay: 0.1s;
+}
+
+/* Middle bar fade out */
+.animated-hamburger.is-open .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(8px);
+  transition-duration: 0.2s;
+}
+
+/* Bottom bar morph */
+.animated-hamburger.is-open .bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(45deg);
+  background-color: #2563eb;
+  transition-delay: 0.1s;
+}

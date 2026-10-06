@@ -169,14 +169,18 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button with morphing bars animation */}
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-gray-900 focus:outline-none p-2"
+                className="p-2 text-slate-700 hover:text-slate-900 focus:outline-none flex items-center justify-center"
                 aria-label="Toggle Menu"
               >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                <div className={`animated-hamburger ${isOpen ? "is-open" : ""}`}>
+                  <span className="bar" />
+                  <span className="bar" />
+                  <span className="bar" />
+                </div>
               </button>
             </div>
           </div>
