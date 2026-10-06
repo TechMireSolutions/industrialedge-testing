@@ -241,12 +241,12 @@ export default function HomePage() {
         </div>
 
         {/* Single White Seamless Strip */}
-        <div className="relative w-full bg-white border-y border-slate-200/70 py-5 overflow-hidden shadow-2xs">
+        <div className="relative w-full bg-white border-y border-slate-200/70 py-4 sm:py-5 overflow-hidden shadow-2xs">
           {/* Left & Right gradient fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee flex gap-12 sm:gap-16 items-center">
+          <div className="animate-marquee flex gap-6 sm:gap-12 md:gap-16 items-center">
             {/* Repeat list twice for seamless infinite loop */}
             {[
               "/uploads/2025/02/1-1.png",
@@ -301,7 +301,7 @@ export default function HomePage() {
             ].map((logoSrc, idx) => (
               <div
                 key={idx}
-                className="w-28 sm:w-32 h-12 shrink-0 flex items-center justify-center relative opacity-85 hover:opacity-100 transition-opacity duration-200"
+                className="w-24 sm:w-32 h-10 sm:h-12 shrink-0 flex items-center justify-center relative opacity-90 hover:opacity-100 transition-opacity duration-200"
               >
                 <Image
                   src={logoSrc}
