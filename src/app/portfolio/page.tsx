@@ -131,7 +131,7 @@ export default function PortfolioPage() {
                     src={logo}
                     alt={`Partner ${idx + 1}`}
                     fill
-                    className="object-contain filter grayscale hover:grayscale-0 transition duration-300"
+                    className="object-contain transition duration-300"
                   />
                 </div>
               </div>

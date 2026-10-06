@@ -22,7 +22,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
-  const { totalItems, setIsCartOpen } = useCart();
+  const { totalItems, setIsCartOpen, isHydrated } = useCart();
 
   const navLinks = [
     { name: "Store / Products", href: "/products" },
@@ -136,7 +136,7 @@ export default function Navbar() {
             >
               <ShoppingCart className="w-5 h-5" />
               <span className="hidden sm:inline font-bold text-xs">Cart</span>
-              {totalItems > 0 && (
+              {isHydrated && totalItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
                   {totalItems}
                 </span>

@@ -28,8 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="flex flex-col min-h-screen antialiased bg-slate-50 text-slate-800 selection:bg-blue-600 selection:text-white">
+    <html lang="en" className={`${inter.variable} ${montserrat.variable}`} suppressHydrationWarning>
+      <body 
+        className="flex flex-col min-h-screen antialiased bg-slate-50 text-slate-800 selection:bg-blue-600 selection:text-white"
+        suppressHydrationWarning
+      >
         <CartProvider>
           <Navbar />
           <CartDrawer />
