@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-[#151838] text-slate-300 border-t border-[#1e2352]">
       <div className="w-full px-4 sm:px-8 lg:px-12 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: About & Logo */}
@@ -23,50 +23,50 @@ export default function Footer() {
                 <span className="font-logo text-[19px] font-bold tracking-tight text-white leading-tight">
                   Industrial Edge
                 </span>
-                <span className="font-logo text-[10.5px] font-medium text-slate-400 tracking-wider leading-tight mt-1">
+                <span className="font-logo text-[10.5px] font-medium text-emerald-400 tracking-wider leading-tight mt-1">
                   Fulfillment Guaranteed
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               From office essentials to industrial supplies, we&apos;re your trusted procurement partner across Pakistan. Simplifying supply chains with reliability, competitive pricing, and timely deliveries.
             </p>
           </div>
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-blue-500 pl-2">
+            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-[#059669] pl-2">
               Quick Links
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> Home
+                <Link href="/" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> About Us
+                <Link href="/about" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> Services
+                <Link href="/services" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> Services
                 </Link>
               </li>
               <li>
-                <Link href="/what-we-do" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> What We Do
+                <Link href="/what-we-do" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> What We Do
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> Portfolio
+                <Link href="/portfolio" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-blue-400 transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-blue-500" /> Contact Us
+                <Link href="/contact" className="hover:text-emerald-400 transition flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#059669]" /> Contact Us
                 </Link>
               </li>
             </ul>
@@ -74,10 +74,10 @@ export default function Footer() {
 
           {/* Col 3: Supply Categories */}
           <div>
-            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-blue-500 pl-2">
+            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-[#059669] pl-2">
               Core Supplies
             </h4>
-            <ul className="space-y-2.5 text-sm text-slate-400">
+            <ul className="space-y-2.5 text-sm text-slate-300">
               <li>Electronic Appliances & IT Gear</li>
               <li>Hardware & Heavy Tools</li>
               <li>Office Supplies & Stationery</li>
@@ -89,27 +89,27 @@ export default function Footer() {
 
           {/* Col 4: Contact Details */}
           <div>
-            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-blue-500 pl-2">
+            <h4 className="text-white text-base font-semibold mb-4 tracking-wider uppercase text-sm border-l-2 border-[#059669] pl-2">
               Contact Us
             </h4>
             <ul className="space-y-3.5 text-sm">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                 <span className="text-slate-300">
                   Suite M-107 Odeon Center Regal chowk saddar Karachi, Pakistan
                 </span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span className="text-slate-300">+92 332 2316225</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span className="text-slate-300">info@industrialedge.pk</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-blue-400 shrink-0" />
-                <span className="text-slate-400">Mon - Sat: 9:00 AM - 6:00 PM</span>
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="text-slate-300">Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
           </div>

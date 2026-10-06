@@ -150,8 +150,8 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                   onClick={handleAddToCart}
                   className={`cart-animated-btn w-full h-12 px-6 rounded-xl font-bold text-sm shadow-md transition-all duration-300 cursor-pointer ${
                     added
-                      ? "bg-emerald-600 text-white shadow-emerald-500/25"
-                      : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-blue-500/30"
+                      ? "bg-[#059669] text-white shadow-emerald-500/25"
+                      : "bg-[#059669] hover:bg-[#047857] text-white hover:shadow-emerald-600/30"
                   }`}
                 >
                   {added ? (
@@ -175,7 +175,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                 </button>
                 <Link
                   href="/contact"
-                  className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center gap-2 shadow-xs transition"
+                  className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-[#151838] hover:bg-[#1f2452] text-white flex items-center justify-center gap-2 shadow-xs transition"
                 >
                   Request B2B RFQ
                 </Link>

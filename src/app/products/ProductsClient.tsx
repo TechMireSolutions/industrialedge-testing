@@ -42,7 +42,7 @@ export default function ProductsClient() {
   }, [selectedCategory, searchTerm, sortBy]);
 
   return (
-    <div className="bg-slate-50 min-h-screen py-10 selection:bg-blue-600 selection:text-white">
+    <div className="bg-[#f8fafc] min-h-screen py-10 selection:bg-[#059669] selection:text-white">
       <div className="w-full px-4 sm:px-8 lg:px-12">
         {/* Breadcrumb / Title with Fade In */}
         <motion.div 
@@ -51,10 +51,10 @@ export default function ProductsClient() {
           transition={{ duration: 0.4 }}
           className="mb-8"
         >
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">
             E-Commerce Store & Catalog
           </span>
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#151838] mt-1">
             Industrial Supplies & Equipment
           </h1>
           <p className="text-slate-600 text-sm mt-2">
@@ -77,7 +77,7 @@ export default function ProductsClient() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search products by title, spec, or category..."
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-150"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#059669] transition-all duration-150"
               />
               <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
               {searchTerm && (
@@ -98,7 +98,7 @@ export default function ProductsClient() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer transition-all"
+                className="px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#059669] cursor-pointer transition-all"
               >
                 <option value="featured">Featured / Best Sellers</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -118,9 +118,9 @@ export default function ProductsClient() {
                   whileTap={{ scale: 0.96 }}
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-colors duration-200 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     active
-                      ? "bg-blue-600 text-white shadow-md shadow-blue-500/30"
+                      ? "bg-gradient-to-r from-[#151838] to-[#059669] text-white shadow-md shadow-emerald-950/20"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function ProductsClient() {
                   setSelectedCategory("all");
                   setSearchTerm("");
                 }}
-                className="px-6 py-2.5 bg-blue-600 text-white font-bold text-xs rounded-xl shadow-xs hover:bg-blue-700 cursor-pointer"
+                className="px-6 py-2.5 bg-gradient-to-r from-[#151838] to-[#059669] text-white font-bold text-xs rounded-xl shadow-xs hover:opacity-90 cursor-pointer"
               >
                 Reset Filters
               </button>

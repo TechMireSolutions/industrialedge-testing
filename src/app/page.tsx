@@ -13,7 +13,8 @@ import {
   ChevronRight,
   Flame,
   Award,
-  Headphones,
+  Sparkles,
+  Zap,
   CheckCircle2
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
@@ -48,12 +49,12 @@ export default function HomePage() {
   const flashDeals = PRODUCTS.filter((p) => p.originalPrice).slice(0, 4);
 
   return (
-    <div className="bg-slate-50 min-h-screen selection:bg-blue-600 selection:text-white">
-      {/* Hero E-Commerce Banner */}
-      <section className="relative bg-slate-950 text-white overflow-hidden py-8 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
-        {/* Ambient subtle glowing orbs in background */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="bg-[#f8fafc] min-h-screen selection:bg-[#059669] selection:text-white">
+      {/* Hero E-Commerce Banner with Brand Navy & Emerald Glow */}
+      <section className="relative bg-[#151838] text-white overflow-hidden py-8 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
+        {/* Ambient brand colored glowing orbs (Emerald & Deep Navy) */}
+        <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-[#059669]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
@@ -64,7 +65,7 @@ export default function HomePage() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/60 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e224d]/85 z-0"></div>
 
         <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 py-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -79,14 +80,14 @@ export default function HomePage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.15, duration: 0.3 }}
-                  className="inline-flex items-center px-3.5 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs"
+                  className="inline-flex items-center px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs"
                 >
                   Pakistan&apos;s Leading B2B Industrial E-Store
                 </motion.div>
                 
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-4">
                   Procure Industrial Gear, Tools & Supplies{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
                     Online
                   </span>
                 </h1>
@@ -99,7 +100,7 @@ export default function HomePage() {
                   <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                     <Link
                       href="/products"
-                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all duration-200 gap-2 w-full sm:w-auto"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] rounded-xl shadow-lg shadow-emerald-600/30 hover:shadow-emerald-500/50 transition-all duration-200 gap-2 w-full sm:w-auto"
                     >
                       <ShoppingBag className="w-4 h-4" /> Shop Store Catalog
                     </Link>
@@ -108,7 +109,7 @@ export default function HomePage() {
                   <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl hover:text-white transition duration-200 w-full sm:w-auto hover:border-slate-500"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-[#1e224d]/80 hover:bg-[#151838] border border-emerald-500/30 rounded-xl hover:text-white transition duration-200 w-full sm:w-auto hover:border-emerald-400"
                     >
                       Request Custom RFQ
                     </Link>
@@ -120,18 +121,18 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.4 }}
-                  className="grid grid-cols-3 gap-6 pt-5 border-t border-slate-800/80 text-xs"
+                  className="grid grid-cols-3 gap-6 pt-5 border-t border-slate-700/80 text-xs"
                 >
                   <div className="group cursor-default">
-                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">10,000+</span>
+                    <span className="font-extrabold text-base text-white block group-hover:text-emerald-400 transition-colors">10,000+</span>
                     <span className="text-slate-400 text-[11px]">Available SKUs</span>
                   </div>
                   <div className="group cursor-default">
-                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">24 - 48 Hrs</span>
+                    <span className="font-extrabold text-base text-white block group-hover:text-emerald-400 transition-colors">24 - 48 Hrs</span>
                     <span className="text-slate-400 text-[11px]">Nationwide Dispatch</span>
                   </div>
                   <div className="group cursor-default">
-                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">100% Tax</span>
+                    <span className="font-extrabold text-base text-white block group-hover:text-emerald-400 transition-colors">100% Tax</span>
                     <span className="text-slate-400 text-[11px]">FBR GST Invoices</span>
                   </div>
                 </motion.div>
@@ -146,21 +147,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Bar (Interactive Animated Floating Cards) */}
-      <section className="py-14 bg-white border-b border-gray-100">
+      {/* Categories Bar (Rich Tinted Surface With Logo Emerald Accents) */}
+      <section className="py-14 bg-gradient-to-b from-slate-100 to-white border-b border-slate-200/80">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-1">
                 Explore Segments
               </span>
-              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+              <h2 className="text-2xl font-bold text-[#151838] tracking-tight">
                 Shop by Department
               </h2>
             </div>
             <Link 
               href="/products" 
-              className="text-xs font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1 group"
+              className="text-xs font-bold text-[#059669] hover:text-[#047857] transition flex items-center gap-1 group"
             >
               All Departments 
               <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -183,12 +184,12 @@ export default function HomePage() {
               >
                 <Link
                   href={`/products?category=${cat.id}`}
-                  className="h-full p-5 rounded-2xl bg-slate-50/80 hover:bg-blue-50/60 border border-slate-100 hover:border-blue-300/80 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-xs hover:shadow-lg"
+                  className="h-full p-5 rounded-2xl bg-white hover:bg-emerald-50/70 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-xs hover:shadow-lg"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white shadow-xs text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200/60 shadow-xs text-[#151838] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-[#151838] group-hover:to-[#059669] group-hover:text-white transition-all duration-300">
                     <ShoppingBag className="w-6 h-6" />
                   </div>
-                  <h4 className="text-xs font-bold text-slate-800 group-hover:text-blue-600 line-clamp-2 transition-colors">
+                  <h4 className="text-xs font-bold text-slate-800 group-hover:text-[#059669] line-clamp-2 transition-colors">
                     {cat.name}
                   </h4>
                 </Link>
@@ -199,20 +200,20 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products E-Commerce Grid */}
-      <section className="py-16">
+      <section className="py-16 bg-[#f8fafc]">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1">
+              <span className="text-xs font-semibold text-[#059669] uppercase tracking-wider block mb-1">
                 Top Rated Sourcing
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#151838] tracking-tight">
                 Trending Industrial Supplies
               </h2>
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 rounded-xl text-xs font-semibold text-slate-700 transition shadow-2xs hover:shadow-xs group"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 hover:border-[#059669] hover:text-[#059669] rounded-xl text-xs font-semibold text-slate-700 transition shadow-2xs hover:shadow-xs group"
             >
               Browse Full Catalog 
               <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -227,8 +228,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Flash Discount Banners */}
-      <section className="py-14 bg-gradient-to-b from-slate-100/90 to-slate-100/40 border-y border-slate-200/70">
+      {/* Flash Discount Banners With Navy Deep Accent */}
+      <section className="py-14 bg-gradient-to-br from-[#151838]/5 via-emerald-50/40 to-slate-100 border-y border-slate-200/80">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
@@ -236,13 +237,13 @@ export default function HomePage() {
                 <Flame className="w-5 h-5 animate-pulse text-red-600" />
               </span>
               <div>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-[#151838]">
                   Bulk Wholesale Specials
                 </h3>
                 <p className="text-xs text-slate-500">Limited time discounted prices on high volume lots</p>
               </div>
             </div>
-            <Link href="/products" className="text-xs font-bold text-red-600 hover:underline">
+            <Link href="/products" className="text-xs font-bold text-[#059669] hover:underline">
               View All Deals →
             </Link>
           </div>
@@ -255,7 +256,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interactive Value Badges Banner with Motion Hover */}
+      {/* Interactive Value Badges Banner with Brand Navy & Emerald Theme */}
       <section className="py-16 bg-white">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <motion.div 
@@ -268,13 +269,13 @@ export default function HomePage() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-blue-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-emerald-50/30 border border-slate-200/70 hover:border-emerald-300 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="p-3 bg-blue-100/80 text-blue-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+              <div className="p-3 bg-emerald-100 text-[#059669] rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-[#059669] group-hover:text-white transition-all duration-300">
                 <Truck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">Nationwide Dispatch</h4>
+                <h4 className="font-bold text-[#151838] text-sm group-hover:text-[#059669] transition-colors">Nationwide Dispatch</h4>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">Direct fleet to industrial parks in Karachi, Lahore, Faisalabad & Islamabad.</p>
               </div>
             </motion.div>
@@ -282,13 +283,13 @@ export default function HomePage() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-emerald-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50/30 border border-slate-200/70 hover:border-blue-300 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="p-3 bg-emerald-100/80 text-emerald-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+              <div className="p-3 bg-[#151838]/10 text-[#151838] rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-[#151838] group-hover:text-white transition-all duration-300">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm group-hover:text-emerald-600 transition-colors">Certified Products</h4>
+                <h4 className="font-bold text-[#151838] text-sm group-hover:text-[#059669] transition-colors">Certified Products</h4>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">100% genuine products with manufacturer batch test reports.</p>
               </div>
             </motion.div>
@@ -296,13 +297,13 @@ export default function HomePage() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-purple-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-teal-50/30 border border-slate-200/70 hover:border-teal-300 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="p-3 bg-purple-100/80 text-purple-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
+              <div className="p-3 bg-teal-100 text-teal-700 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm group-hover:text-purple-600 transition-colors">B2B Volume Rates</h4>
+                <h4 className="font-bold text-[#151838] text-sm group-hover:text-[#059669] transition-colors">B2B Volume Rates</h4>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">Tiered quantity discounts for manufacturing facilities & contractors.</p>
               </div>
             </motion.div>
@@ -310,13 +311,13 @@ export default function HomePage() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-amber-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-cyan-50/30 border border-slate-200/70 hover:border-cyan-300 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="p-3 bg-amber-100/80 text-amber-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+              <div className="p-3 bg-cyan-100 text-cyan-700 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
                 <Briefcase className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">Credit Terms</h4>
+                <h4 className="font-bold text-[#151838] text-sm group-hover:text-[#059669] transition-colors">Credit Terms</h4>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">Flexible 15 to 30 day credit lines available for registered corporate buyers.</p>
               </div>
             </motion.div>
@@ -325,15 +326,15 @@ export default function HomePage() {
       </section>
 
       {/* Brand Partners Bar (Continuous Single Strip Marquee Slider) */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100 overflow-hidden">
+      <section className="py-12 bg-slate-100/70 border-t border-slate-200/80 overflow-hidden">
         <div className="w-full text-center mb-6">
-          <p className="text-xs uppercase font-bold text-slate-400 tracking-wider">
+          <p className="text-xs uppercase font-bold text-[#151838]/70 tracking-wider">
             Supplying Products From Leading Industrial Brands
           </p>
         </div>
 
         {/* Single White Seamless Strip */}
-        <div className="relative w-full bg-white border-y border-slate-200/70 py-5 sm:py-7 overflow-hidden shadow-2xs">
+        <div className="relative w-full bg-white border-y border-slate-200/80 py-5 sm:py-7 overflow-hidden shadow-2xs">
           {/* Left & Right gradient fades */}
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />

@@ -123,27 +123,27 @@ export default function Navbar() {
                   <span
                     className={`relative z-10 block transition-colors duration-300 ${
                       isActive
-                        ? "text-blue-600 font-bold"
+                        ? "text-[#059669] font-bold"
                         : "text-slate-700 group-hover:text-white"
                     }`}
                   >
                     {item.name}
                   </span>
 
-                  {/* Top & Bottom Border Animation (Brand Blue) */}
+                  {/* Top & Bottom Border Animation (Logo Teal & Navy) */}
                   <span
-                    className={`absolute inset-0 border-t-2 border-b-2 border-blue-600 pointer-events-none transition-all duration-300 origin-center ${
+                    className={`absolute inset-0 border-t-2 border-b-2 border-[#059669] pointer-events-none transition-all duration-300 origin-center ${
                       isActive
                         ? "scale-y-100 opacity-100"
                         : "transform scale-y-[2] opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
                     }`}
                   />
 
-                  {/* Background Fill Animation (Brand Blue) */}
+                  {/* Background Fill Animation (Gradient from Deep Navy to Teal) */}
                   <span
-                    className={`absolute inset-0 bg-blue-600 pointer-events-none transition-all duration-300 origin-top ${
+                    className={`absolute inset-0 bg-gradient-to-r from-[#151838] to-[#059669] pointer-events-none transition-all duration-300 origin-top ${
                       isActive
-                        ? "scale-100 opacity-10 bg-blue-50"
+                        ? "scale-100 opacity-10 bg-emerald-50"
                         : "transform scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"
                     }`}
                   />
@@ -152,18 +152,18 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Actions: Cart & Quote */}
+          {/* Actions: Cart Trigger with Logo Gradient Accents */}
           <div className="flex items-center gap-3">
             {/* Cart Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-blue-50 text-slate-800 hover:text-blue-600 transition flex items-center gap-2"
+              className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-emerald-50 text-slate-800 hover:text-[#059669] transition flex items-center gap-2 border border-slate-200/80 hover:border-emerald-200 cursor-pointer shadow-2xs"
               aria-label="View Cart"
             >
               <ShoppingCart className="w-5 h-5" />
               <span className="hidden sm:inline font-bold text-xs">Cart</span>
               {isHydrated && totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-[#151838] to-[#059669] text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-xs">
                   {totalItems}
                 </span>
               )}
