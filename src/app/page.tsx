@@ -4,26 +4,42 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
-  CheckCircle2, 
   ArrowRight, 
   TrendingUp, 
   ShieldCheck, 
   Truck, 
-  Clock, 
-  Cpu, 
-  Wrench, 
   Briefcase, 
-  HardHat, 
-  FlaskConical, 
-  Zap, 
   ShoppingBag,
   ChevronRight,
-  Flame
+  Flame,
+  Award,
+  Headphones,
+  CheckCircle2
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import HeroDealSlider from "@/components/HeroDealSlider";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -32,15 +48,19 @@ export default function HomePage() {
   const flashDeals = PRODUCTS.filter((p) => p.originalPrice).slice(0, 4);
 
   return (
-    <div className="bg-slate-50 min-h-screen">
-      {/* Hero E-Commerce Banner (Fitted Exactly to Full Screen Viewport) */}
-      <section className="relative bg-slate-950 text-white overflow-hidden py-6 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
-        <div className="absolute inset-0 z-0 opacity-25">
+    <div className="bg-slate-50 min-h-screen selection:bg-blue-600 selection:text-white">
+      {/* Hero E-Commerce Banner */}
+      <section className="relative bg-slate-950 text-white overflow-hidden py-8 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
+        {/* Ambient subtle glowing orbs in background */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="/uploads/2025/12/courier-service-for-the-delivery-of-goods-express-2023-12-05-02-45-15-utc-scaled-1.webp"
             alt="Industrial Logistics"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-1000"
             priority
           />
         </div>
@@ -51,50 +71,70 @@ export default function HomePage() {
             {/* Left Copy */}
             <div className="lg:col-span-7">
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.55, ease: "easeOut" }}
               >
-                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.15, duration: 0.3 }}
+                  className="inline-flex items-center px-3.5 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs"
+                >
                   Pakistan&apos;s Leading B2B Industrial E-Store
-                </div>
+                </motion.div>
+                
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-4">
-                  Procure Industrial Gear, Tools & Supplies <span className="text-blue-500">Online</span>
+                  Procure Industrial Gear, Tools & Supplies{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400">
+                    Online
+                  </span>
                 </h1>
+                
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6 max-w-xl">
                   Order high-spec power tools, HVAC equipment, OSHA-standard PPE, chemicals, and electrical gear with transparent pricing, instant online ordering, and fast doorstep delivery.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <Link
-                    href="/products"
-                    className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md hover:shadow-blue-500/20 transition duration-200 gap-2"
-                  >
-                    <ShoppingBag className="w-4 h-4" /> Shop Store Catalog
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl hover:text-white transition duration-200"
-                  >
-                    Request Custom RFQ
-                  </Link>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                    <Link
+                      href="/products"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all duration-200 gap-2 w-full sm:w-auto"
+                    >
+                      <ShoppingBag className="w-4 h-4" /> Shop Store Catalog
+                    </Link>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl hover:text-white transition duration-200 w-full sm:w-auto hover:border-slate-500"
+                    >
+                      Request Custom RFQ
+                    </Link>
+                  </motion.div>
                 </div>
 
                 {/* Highlights */}
-                <div className="grid grid-cols-3 gap-6 pt-5 border-t border-slate-800/80 text-xs">
-                  <div>
-                    <span className="font-bold text-base text-white block">10,000+</span>
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.4 }}
+                  className="grid grid-cols-3 gap-6 pt-5 border-t border-slate-800/80 text-xs"
+                >
+                  <div className="group cursor-default">
+                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">10,000+</span>
                     <span className="text-slate-400 text-[11px]">Available SKUs</span>
                   </div>
-                  <div>
-                    <span className="font-bold text-base text-white block">24 - 48 Hrs</span>
+                  <div className="group cursor-default">
+                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">24 - 48 Hrs</span>
                     <span className="text-slate-400 text-[11px]">Nationwide Dispatch</span>
                   </div>
-                  <div>
-                    <span className="font-bold text-base text-white block">100% Tax</span>
+                  <div className="group cursor-default">
+                    <span className="font-extrabold text-base text-white block group-hover:text-blue-400 transition-colors">100% Tax</span>
                     <span className="text-slate-400 text-[11px]">FBR GST Invoices</span>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
 
@@ -106,38 +146,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Bar (Full Width & Clean) */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      {/* Categories Bar (Interactive Animated Floating Cards) */}
+      <section className="py-14 bg-white border-b border-gray-100">
         <div className="w-full px-4 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-              Shop by Department
-            </h2>
-            <Link href="/products" className="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
-              All Departments <ChevronRight className="w-3.5 h-3.5" />
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">
+                Explore Segments
+              </span>
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+                Shop by Department
+              </h2>
+            </div>
+            <Link 
+              href="/products" 
+              className="text-xs font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1 group"
+            >
+              All Departments 
+              <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5"
+          >
             {CATEGORIES.filter((c) => c.id !== "all").map((cat, idx) => (
-              <Link
+              <motion.div
                 key={idx}
-                href={`/products?category=${cat.id}`}
-                className="p-5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-200 transition-all duration-200 group text-center flex flex-col items-center justify-center shadow-2xs hover:shadow-xs"
+                variants={itemVariants}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.97 }}
               >
-                <div className="w-12 h-12 rounded-xl bg-white shadow-xs text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <ShoppingBag className="w-6 h-6" />
-                </div>
-                <h4 className="text-xs font-semibold text-slate-800 group-hover:text-blue-600 line-clamp-2">
-                  {cat.name}
-                </h4>
-              </Link>
+                <Link
+                  href={`/products?category=${cat.id}`}
+                  className="h-full p-5 rounded-2xl bg-slate-50/80 hover:bg-blue-50/60 border border-slate-100 hover:border-blue-300/80 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-xs hover:shadow-lg"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-xs text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <ShoppingBag className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-xs font-bold text-slate-800 group-hover:text-blue-600 line-clamp-2 transition-colors">
+                    {cat.name}
+                  </h4>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Featured Products E-Commerce Grid (Full Width) */}
+      {/* Featured Products E-Commerce Grid */}
       <section className="py-16">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
@@ -151,82 +212,115 @@ export default function HomePage() {
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-blue-500 rounded-xl text-xs font-semibold text-slate-700 transition"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 rounded-xl text-xs font-semibold text-slate-700 transition shadow-2xs hover:shadow-xs group"
             >
-              Browse Full Catalog <ArrowRight className="w-3.5 h-3.5" />
+              Browse Full Catalog 
+              <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {featuredProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} index={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Flash Discount Banners (Full Width) */}
-      <section className="py-12 bg-slate-100/70 border-y border-slate-200/60">
+      {/* Flash Discount Banners */}
+      <section className="py-14 bg-gradient-to-b from-slate-100/90 to-slate-100/40 border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-8 lg:px-12">
-          <div className="flex items-center gap-2 mb-6">
-            <Flame className="w-5 h-5 text-red-600" />
-            <h3 className="text-xl font-bold text-slate-900">
-              Bulk Wholesale Specials
-            </h3>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <span className="p-1.5 bg-red-100 text-red-600 rounded-lg">
+                <Flame className="w-5 h-5 animate-pulse text-red-600" />
+              </span>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900">
+                  Bulk Wholesale Specials
+                </h3>
+                <p className="text-xs text-slate-500">Limited time discounted prices on high volume lots</p>
+              </div>
+            </div>
+            <Link href="/products" className="text-xs font-bold text-red-600 hover:underline">
+              View All Deals →
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {flashDeals.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {flashDeals.map((product, idx) => (
+              <ProductCard key={product.id} product={product} index={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Value Badges Banner (Full Width) */}
+      {/* Interactive Value Badges Banner with Motion Hover */}
       <section className="py-16 bg-white">
         <div className="w-full px-4 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-              <div className="p-3 bg-blue-100 text-blue-600 rounded-xl shrink-0">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            className="grid grid-cols-1 md:grid-cols-4 gap-6"
+          >
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-blue-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="p-3 bg-blue-100/80 text-blue-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                 <Truck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm">Nationwide Dispatch</h4>
-                <p className="text-xs text-slate-500 mt-1">Direct fleet to industrial parks in Karachi, Lahore, Faisalabad & Islamabad.</p>
+                <h4 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">Nationwide Dispatch</h4>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Direct fleet to industrial parks in Karachi, Lahore, Faisalabad & Islamabad.</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-              <div className="p-3 bg-emerald-100 text-emerald-600 rounded-xl shrink-0">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-emerald-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="p-3 bg-emerald-100/80 text-emerald-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm">Certified Products</h4>
-                <p className="text-xs text-slate-500 mt-1">100% genuine products with manufacturer batch test reports.</p>
+                <h4 className="font-bold text-slate-900 text-sm group-hover:text-emerald-600 transition-colors">Certified Products</h4>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">100% genuine products with manufacturer batch test reports.</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-              <div className="p-3 bg-purple-100 text-purple-600 rounded-xl shrink-0">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-purple-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="p-3 bg-purple-100/80 text-purple-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm">B2B Volume Rates</h4>
-                <p className="text-xs text-slate-500 mt-1">Tiered quantity discounts for manufacturing facilities & contractors.</p>
+                <h4 className="font-bold text-slate-900 text-sm group-hover:text-purple-600 transition-colors">B2B Volume Rates</h4>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Tiered quantity discounts for manufacturing facilities & contractors.</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-              <div className="p-3 bg-amber-100 text-amber-600 rounded-xl shrink-0">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-amber-200 flex items-start gap-4 shadow-2xs hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="p-3 bg-amber-100/80 text-amber-600 rounded-xl shrink-0 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
                 <Briefcase className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm">Credit Terms</h4>
-                <p className="text-xs text-slate-500 mt-1">Flexible 15 to 30 day credit lines available for registered corporate buyers.</p>
+                <h4 className="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">Credit Terms</h4>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Flexible 15 to 30 day credit lines available for registered corporate buyers.</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
