@@ -63,16 +63,25 @@ export default function Navbar() {
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 gap-4">
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/industrial-edge-logo.webp"
-              alt="Industrial Edge"
-              width={220}
-              height={60}
-              className="h-12 w-auto object-contain"
-              priority
-            />
+          {/* Brand Logo with Icon + Custom Typography */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="relative w-11 h-11 shrink-0 flex items-center justify-center">
+              <Image
+                src="/logo-icon.webp"
+                alt="Industrial Edge Logo"
+                fill
+                className="object-contain transform group-hover:scale-105 transition-transform duration-200"
+                priority
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="text-[20px] font-black tracking-tight text-[#1e428a] leading-none">
+                Industrial Edge
+              </span>
+              <span className="text-[11px] font-medium text-slate-500 tracking-wide mt-1 leading-none">
+                Fulfillment Guaranteed
+              </span>
+            </div>
           </Link>
 
           {/* Search bar (Store Search) */}
@@ -98,17 +107,17 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <nav className="hidden lg:flex items-center space-x-7 text-[15px] font-semibold tracking-normal">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`transition duration-150 ${
+                  className={`transition duration-150 py-1 border-b-2 ${
                     isActive
-                      ? "text-blue-600 font-bold"
-                      : "text-gray-700 hover:text-blue-600"
+                      ? "text-[#1e428a] font-bold border-[#ea580c]"
+                      : "text-slate-700 hover:text-[#1e428a] border-transparent"
                   }`}
                 >
                   {item.name}
