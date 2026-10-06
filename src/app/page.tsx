@@ -147,21 +147,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Bar (Rich Tinted Surface With Logo Emerald Accents) */}
-      <section className="py-14 bg-gradient-to-b from-slate-100 to-white border-b border-slate-200/80">
+      {/* Categories Bar (Rich Industrial Surface With Logo Navy/Emerald Accents) */}
+      <section className="py-14 bg-gradient-to-b from-slate-200/70 via-slate-100 to-slate-200/50 border-b border-slate-300/80">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-1">
+              <span className="text-xs font-extrabold text-[#059669] uppercase tracking-wider block mb-1">
                 Explore Segments
               </span>
-              <h2 className="text-2xl font-bold text-[#151838] tracking-tight">
+              <h2 className="text-2xl font-black text-[#151838] tracking-tight">
                 Shop by Department
               </h2>
             </div>
             <Link 
               href="/products" 
-              className="text-xs font-bold text-[#059669] hover:text-[#047857] transition flex items-center gap-1 group"
+              className="text-xs font-bold text-[#059669] hover:text-[#047857] transition flex items-center gap-1 group bg-emerald-50/80 px-3 py-1.5 rounded-lg border border-emerald-200/60"
             >
               All Departments 
               <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -184,9 +184,9 @@ export default function HomePage() {
               >
                 <Link
                   href={`/products?category=${cat.id}`}
-                  className="h-full p-5 rounded-2xl bg-white hover:bg-emerald-50/70 border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-xs hover:shadow-lg"
+                  className="h-full p-5 rounded-2xl bg-white hover:bg-emerald-50/80 border border-slate-200/90 hover:border-emerald-400 transition-all duration-300 group text-center flex flex-col items-center justify-center shadow-sm hover:shadow-xl"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200/60 shadow-xs text-[#151838] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-[#151838] group-hover:to-[#059669] group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-[#151838]/5 border border-[#151838]/10 shadow-xs text-[#151838] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-[#151838] group-hover:to-[#059669] group-hover:text-white transition-all duration-300">
                     <ShoppingBag className="w-6 h-6" />
                   </div>
                   <h4 className="text-xs font-bold text-slate-800 group-hover:text-[#059669] line-clamp-2 transition-colors">
@@ -199,21 +199,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products E-Commerce Grid */}
-      <section className="py-16 bg-[#f8fafc]">
+      {/* Featured Products E-Commerce Grid (Cool Soft Industrial Tint) */}
+      <section className="py-16 bg-gradient-to-b from-[#f1f5f9] via-slate-100 to-slate-200/60 border-b border-slate-300/70">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-semibold text-[#059669] uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-1">
                 Top Rated Sourcing
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#151838] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#151838] tracking-tight">
                 Trending Industrial Supplies
               </h2>
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 hover:border-[#059669] hover:text-[#059669] rounded-xl text-xs font-semibold text-slate-700 transition shadow-2xs hover:shadow-xs group"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-300 hover:border-[#059669] hover:text-[#059669] rounded-xl text-xs font-bold text-slate-700 transition shadow-xs hover:shadow-md group"
             >
               Browse Full Catalog 
               <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -257,7 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* Interactive Value Badges Banner with Brand Navy & Emerald Theme */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-b from-slate-100 to-slate-200/50 border-b border-slate-300/70">
         <div className="w-full px-4 sm:px-8 lg:px-12">
           <motion.div 
             variants={containerVariants}
