@@ -350,13 +350,13 @@ export default function CheckoutPage() {
                     </div>
                     <div className="flex justify-between text-sm font-black text-slate-900 pt-3 border-t border-gray-100">
                       <span>Grand Total</span>
-                      <span className="text-blue-600 text-base">PKR {grandTotal.toLocaleString()}</span>
+                      <span className="text-[#059669] text-lg font-black">PKR {grandTotal.toLocaleString()}</span>
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-black text-xs rounded-xl shadow-md hover:shadow-blue-500/20 transition flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-black text-xs sm:text-sm rounded-xl shadow-lg shadow-emerald-700/25 hover:shadow-emerald-600/40 transition flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Lock className="w-4 h-4" /> Place Formal Procurement Order
                   </button>
