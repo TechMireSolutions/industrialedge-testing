@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Portfolio & Clients - Industrial Edge",
@@ -59,7 +59,7 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div>
+    <div className="bg-slate-50 dark:bg-slate-950 transition-colors duration-200">
       {/* Banner */}
       <section className="bg-slate-900 text-white py-16 sm:py-24 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,16 +72,16 @@ export default function PortfolioPage() {
       </section>
 
       {/* Case studies */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-xs">Recent Highlights</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 sm:text-4xl">Featured Procurement Deliveries</h2>
+            <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase text-xs">Recent Highlights</span>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-2 sm:text-4xl">Featured Procurement Deliveries</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((p, idx) => (
-              <div key={idx} className="bg-slate-50 rounded-xl overflow-hidden border border-slate-100 shadow-sm flex flex-col">
+              <div key={idx} className="bg-slate-50 dark:bg-slate-800/60 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700/60 shadow-sm flex flex-col">
                 <div className="relative aspect-16/10">
                   <Image
                     src={p.image}
@@ -92,13 +92,13 @@ export default function PortfolioPage() {
                 </div>
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
-                    <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-2">{p.category}</span>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{p.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-6">{p.desc}</p>
+                    <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-2">{p.category}</span>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{p.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-6">{p.desc}</p>
                   </div>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 gap-1 mt-auto"
+                    className="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 gap-1 mt-auto"
                   >
                     Request Similar Supplies <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -110,12 +110,12 @@ export default function PortfolioPage() {
       </section>
 
       {/* Partner Brands Grid */}
-      <section className="py-20 bg-slate-50 border-t border-slate-100">
+      <section className="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-xs">Certified Sourcing</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 sm:text-4xl">Brands & Partners We Supply</h2>
-            <p className="text-gray-600 mt-4 text-base">
+            <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase text-xs">Certified Sourcing</span>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-2 sm:text-4xl">Brands & Partners We Supply</h2>
+            <p className="text-gray-600 dark:text-slate-400 mt-4 text-base">
               We procure and distribute products from industry-leading global and local manufacturers.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function PortfolioPage() {
             {partnerLogos.map((logo, idx) => (
               <div
                 key={idx}
-                className="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-center h-24 hover:shadow-md transition"
+                className="bg-white dark:bg-white/95 p-4 rounded-xl border border-gray-100 dark:border-slate-800 shadow-xs flex items-center justify-center h-24 hover:shadow-md transition"
               >
                 <div className="relative w-full h-full">
                   <Image

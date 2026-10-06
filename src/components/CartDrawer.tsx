@@ -20,7 +20,7 @@ export default function CartDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsCartOpen(false)}
-            className="fixed inset-0 bg-black/60 z-50 backdrop-blur-xs"
+            className="fixed inset-0 bg-black/60 dark:bg-black/80 z-50 backdrop-blur-xs"
           />
 
           {/* Drawer */}
@@ -29,10 +29,10 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-white shadow-2xl z-50 flex flex-col"
+            className="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-white dark:bg-slate-900 shadow-2xl z-50 flex flex-col border-l border-gray-200 dark:border-slate-800 transition-colors duration-200"
           >
             {/* Header */}
-            <div className="p-6 border-b border-gray-100 flex items-center justify-between bg-slate-900 text-white">
+            <div className="p-6 border-b border-gray-100 dark:border-slate-800 flex items-center justify-between bg-slate-900 text-white">
               <div className="flex items-center gap-2.5">
                 <ShoppingBag className="w-5 h-5 text-blue-400" />
                 <h3 className="font-bold text-lg">Your Procurement Cart</h3>
@@ -50,11 +50,11 @@ export default function CartDrawer() {
             <div className="flex-1 overflow-y-auto p-6 space-y-4">
               {cart.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center p-8">
-                  <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4">
                     <ShoppingBag className="w-8 h-8" />
                   </div>
-                  <h4 className="font-bold text-gray-800 text-lg mb-1">Your cart is empty</h4>
-                  <p className="text-gray-500 text-sm max-w-xs mb-6">
+                  <h4 className="font-bold text-gray-800 dark:text-slate-100 text-lg mb-1">Your cart is empty</h4>
+                  <p className="text-gray-500 dark:text-slate-400 text-sm max-w-xs mb-6">
                     Explore our industrial catalog and add parts, gear, and supplies to your procurement order.
                   </p>
                   <button
@@ -69,9 +69,9 @@ export default function CartDrawer() {
                   <motion.div
                     layout
                     key={item.product.id}
-                    className="flex gap-4 p-4 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-50 transition"
+                    className="flex gap-4 p-4 rounded-xl border border-gray-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition"
                   >
-                    <div className="relative w-20 h-20 bg-white rounded-lg overflow-hidden border border-gray-200 shrink-0">
+                    <div className="relative w-20 h-20 bg-white rounded-lg overflow-hidden border border-gray-200 dark:border-slate-700 shrink-0">
                       <Image
                         src={item.product.image}
                         alt={item.product.name}
@@ -82,41 +82,41 @@ export default function CartDrawer() {
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex justify-between items-start">
-                          <h4 className="font-semibold text-gray-900 text-sm line-clamp-1">
+                          <h4 className="font-semibold text-gray-900 dark:text-slate-100 text-sm line-clamp-1">
                             {item.product.name}
                           </h4>
                           <button
                             onClick={() => removeFromCart(item.product.id)}
-                            className="text-gray-400 hover:text-red-600 transition ml-2"
+                            className="text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition ml-2"
                             title="Remove item"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-                        <p className="text-xs text-blue-600 font-medium capitalize mt-0.5">
+                        <p className="text-xs text-blue-600 dark:text-blue-400 font-medium capitalize mt-0.5">
                           {item.product.category.replace("-", " ")}
                         </p>
                       </div>
 
                       <div className="flex items-center justify-between mt-3">
-                        <div className="flex items-center border border-gray-200 bg-white rounded-lg overflow-hidden shadow-xs">
+                        <div className="flex items-center border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-xs">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="p-1.5 hover:bg-slate-100 text-gray-600"
+                            className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300"
                           >
                             <Minus className="w-3.5 h-3.5" />
                           </button>
-                          <span className="px-3 text-xs font-bold text-gray-800">
+                          <span className="px-3 text-xs font-bold text-gray-800 dark:text-slate-200">
                             {item.quantity}
                           </span>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="p-1.5 hover:bg-slate-100 text-gray-600"
+                            className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300"
                           >
                             <Plus className="w-3.5 h-3.5" />
                           </button>
                         </div>
-                        <p className="font-bold text-slate-900 text-sm">
+                        <p className="font-bold text-slate-900 dark:text-white text-sm">
                           PKR {(item.product.price * item.quantity).toLocaleString()}
                         </p>
                       </div>
@@ -128,19 +128,19 @@ export default function CartDrawer() {
 
             {/* Footer Summary */}
             {cart.length > 0 && (
-              <div className="p-6 border-t border-gray-100 bg-white space-y-4">
+              <div className="p-6 border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-4">
                 <div className="space-y-1.5 text-sm">
-                  <div className="flex justify-between text-gray-600">
+                  <div className="flex justify-between text-gray-600 dark:text-slate-400">
                     <span>Subtotal</span>
-                    <span>PKR {cartTotal.toLocaleString()}</span>
+                    <span className="text-slate-900 dark:text-white font-medium">PKR {cartTotal.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-gray-600">
+                  <div className="flex justify-between text-gray-600 dark:text-slate-400">
                     <span>Estimated GST (18%)</span>
                     <span>Calculated at Checkout</span>
                   </div>
-                  <div className="flex justify-between text-base font-extrabold text-gray-900 pt-2 border-t border-gray-100">
+                  <div className="flex justify-between text-base font-extrabold text-gray-900 dark:text-white pt-2 border-t border-gray-100 dark:border-slate-800">
                     <span>Estimated Total</span>
-                    <span className="text-blue-600 font-black">PKR {cartTotal.toLocaleString()}</span>
+                    <span className="text-blue-600 dark:text-blue-400 font-black">PKR {cartTotal.toLocaleString()}</span>
                   </div>
                 </div>
 
@@ -155,7 +155,7 @@ export default function CartDrawer() {
                   <Link
                     href="/contact"
                     onClick={() => setIsCartOpen(false)}
-                    className="w-full inline-flex items-center justify-center py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl shadow-sm transition duration-200"
+                    className="w-full inline-flex items-center justify-center py-3 px-4 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-sm rounded-xl shadow-sm transition duration-200"
                   >
                     Request B2B RFQ
                   </Link>
