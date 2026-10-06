@@ -39,15 +39,15 @@ export default async function ProductDetailPage({ params }: Props) {
   ).slice(0, 4);
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen py-10 transition-colors duration-200">
+    <div className="bg-slate-50 min-h-screen py-10">
       <div className="w-full px-4 sm:px-8 lg:px-12">
         {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 text-xs text-gray-500 dark:text-slate-400 mb-8">
-          <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
+        <nav className="flex items-center space-x-2 text-xs text-gray-500 mb-8">
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           <span>/</span>
-          <Link href="/products" className="hover:text-blue-600 dark:hover:text-blue-400">Store</Link>
+          <Link href="/products" className="hover:text-blue-600">Store</Link>
           <span>/</span>
-          <span className="text-gray-900 dark:text-white font-semibold truncate max-w-xs">{product.name}</span>
+          <span className="text-gray-900 font-semibold truncate max-w-xs">{product.name}</span>
         </nav>
 
         {/* Product Component */}

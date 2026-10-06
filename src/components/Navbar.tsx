@@ -9,12 +9,14 @@ import {
   X, 
   Phone, 
   Mail, 
+  MapPin, 
   ShoppingCart, 
   Search, 
   ShieldCheck, 
+  Layers, 
+  User
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +34,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-slate-800 transition-colors duration-200">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-100">
       {/* Top Banner (Full Screen Width) */}
       <div className="bg-slate-950 text-slate-300 text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-800">
         <div className="w-full px-1 sm:px-4 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-2">
@@ -64,7 +66,7 @@ export default function Navbar() {
       {/* Main Nav (Full Screen Width) */}
       <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20 gap-4">
-          {/* Brand Logo with Larger Icon */}
+          {/* Brand Logo with Larger Icon + Same Text Size */}
           <Link href="/" className="flex items-center gap-3.5 shrink-0 group py-1">
             <div className="relative w-14 h-14 shrink-0 flex items-center justify-center">
               <Image
@@ -76,10 +78,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-logo text-[19px] font-bold tracking-tight text-[#1e428a] dark:text-blue-400 leading-tight">
+              <span className="font-logo text-[19px] font-bold tracking-tight text-[#1e428a] leading-tight">
                 Industrial Edge
               </span>
-              <span className="font-logo text-[10.5px] font-medium text-slate-500 dark:text-slate-400 tracking-wider leading-tight">
+              <span className="font-logo text-[10.5px] font-medium text-slate-500 tracking-wider leading-tight">
                 Fulfillment Guaranteed
               </span>
             </div>
@@ -101,7 +103,7 @@ export default function Navbar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search tools, PPE, electronics, lubricants, cables..."
-                className="w-full pl-10 pr-4 py-2 text-xs bg-slate-100 dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/80 focus:bg-white dark:focus:bg-slate-900 border border-transparent focus:border-blue-500 dark:focus:border-blue-400 text-slate-800 dark:text-slate-100 rounded-full focus:outline-none transition duration-150"
+                className="w-full pl-10 pr-4 py-2 text-xs bg-slate-100 hover:bg-slate-50 focus:bg-white border border-transparent focus:border-blue-500 rounded-full focus:outline-none transition duration-150"
               />
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-2.5" />
             </form>
@@ -117,8 +119,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`transition duration-150 py-1 ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 font-semibold"
-                      : "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+                      ? "text-blue-600 font-semibold"
+                      : "text-slate-600 hover:text-blue-600"
                   }`}
                 >
                   {item.name}
@@ -127,15 +129,12 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Actions: Theme Toggle, Cart & Quote */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            {/* Theme Toggle Button */}
-            <ThemeToggle />
-
+          {/* Actions: Cart & Quote */}
+          <div className="flex items-center gap-3">
             {/* Cart Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-blue-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-2"
+              className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-blue-50 text-slate-800 hover:text-blue-600 transition flex items-center gap-2"
               aria-label="View Cart"
             >
               <ShoppingCart className="w-5 h-5" />
@@ -158,7 +157,7 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 dark:text-slate-200 hover:text-gray-900 focus:outline-none p-2"
+                className="text-gray-700 hover:text-gray-900 focus:outline-none p-2"
                 aria-label="Toggle Menu"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -183,7 +182,7 @@ export default function Navbar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search industrial products..."
-              className="w-full pl-10 pr-4 py-2 text-xs bg-slate-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-lg focus:outline-none focus:border-blue-500"
+              className="w-full pl-10 pr-4 py-2 text-xs bg-slate-100 border border-gray-200 rounded-lg focus:outline-none"
             />
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
           </form>
@@ -192,13 +191,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {isOpen && (
-        <div className="lg:hidden bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 px-4 pt-2 pb-6 space-y-3">
+        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
           {navLinks.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 py-1"
+              className="block text-base font-medium text-gray-700 hover:text-blue-600 py-1"
             >
               {item.name}
             </Link>
