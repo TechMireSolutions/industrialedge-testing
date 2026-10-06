@@ -33,8 +33,8 @@ export default function HomePage() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      {/* Hero E-Commerce Banner (Fitted to Viewport Height) */}
-      <section className="relative bg-slate-950 text-white overflow-hidden py-8 sm:py-10 lg:py-0 lg:min-h-[calc(100vh-120px)] lg:flex lg:items-center border-b border-slate-800">
+      {/* Hero E-Commerce Banner (Fitted Exactly to Full Screen Viewport) */}
+      <section className="relative bg-slate-950 text-white overflow-hidden py-6 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
         <div className="absolute inset-0 z-0 opacity-25">
           <Image
             src="/uploads/2025/12/courier-service-for-the-delivery-of-goods-express-2023-12-05-02-45-15-utc-scaled-1.webp"
