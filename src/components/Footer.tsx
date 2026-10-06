@@ -10,20 +10,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: About & Logo */}
           <div className="space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <div className="relative w-10 h-10 bg-white p-1 rounded-lg shrink-0 flex items-center justify-center">
+            <Link href="/" className="inline-flex items-center gap-3.5 group">
+              <div className="relative w-14 h-14 bg-white p-1.5 rounded-xl shrink-0 flex items-center justify-center shadow-xs">
                 <Image
                   src="/logo-icon.webp"
                   alt="Industrial Edge Logo"
                   fill
-                  className="object-contain p-1"
+                  className="object-contain p-1 transform group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
               <div className="flex flex-col justify-center text-left">
-                <span className="font-logo text-[18px] font-bold tracking-tight text-white leading-tight">
+                <span className="font-logo text-[19px] font-bold tracking-tight text-white leading-tight">
                   Industrial Edge
                 </span>
-                <span className="font-logo text-[10px] font-medium text-slate-400 tracking-wider leading-tight mt-0.5">
+                <span className="font-logo text-[10.5px] font-medium text-slate-400 tracking-wider leading-tight mt-1">
                   Fulfillment Guaranteed
                 </span>
               </div>
