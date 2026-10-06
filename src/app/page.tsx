@@ -24,6 +24,7 @@ import {
 import { motion } from "framer-motion";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+import HeroDealSlider from "@/components/HeroDealSlider";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -99,50 +100,9 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right: Featured Deal Card */}
+            {/* Right: Continuous Live Deals Slider */}
             <div className="lg:col-span-5">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.15 }}
-                className="bg-white/10 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/10 text-white relative shadow-xl max-w-md mx-auto lg:ml-auto"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-red-600/90 text-white text-[11px] font-bold rounded-md uppercase tracking-wider">
-                    <Flame className="w-3 h-3" /> Featured Deal
-                  </span>
-                  <span className="text-[11px] text-slate-300 font-medium">In Stock</span>
-                </div>
-
-                <div className="relative aspect-16/10 rounded-xl bg-white/5 overflow-hidden p-4 mb-3 flex items-center justify-center">
-                  <Image
-                    src="/uploads/2025/03/200.png"
-                    alt="Brushless Impact Drill"
-                    fill
-                    className="object-contain p-2"
-                  />
-                </div>
-
-                <h3 className="font-bold text-base text-white mb-1.5 line-clamp-1">
-                  Heavy-Duty Brushless Cordless Impact Drill Kit 20V
-                </h3>
-                <p className="text-xs text-slate-300 line-clamp-2 mb-3">
-                  Industrial 85Nm torque brushless motor with twin 4.0Ah batteries and heavy-duty case.
-                </p>
-
-                <div className="flex items-baseline gap-2.5 mb-4">
-                  <span className="text-xl font-bold text-white">PKR 24,500</span>
-                  <span className="text-xs text-slate-400 line-through">PKR 28,000</span>
-                  <span className="text-[11px] text-emerald-400 font-bold ml-auto">Save 13%</span>
-                </div>
-
-                <Link
-                  href="/products/cordless-impact-drill-kit-20v"
-                  className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition"
-                >
-                  View Product Deal <ChevronRight className="w-3.5 h-3.5" />
-                </Link>
-              </motion.div>
+              <HeroDealSlider deals={PRODUCTS.slice(0, 6)} />
             </div>
           </div>
         </div>
