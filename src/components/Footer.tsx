@@ -13,11 +13,11 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <div className="bg-white p-2 rounded-lg inline-block">
                 <Image
-                  src="/uploads/2025/02/Industrial-Edge-Logo.webp"
+                  src="/industrial-edge-logo.webp"
                   alt="Industrial Edge Logo"
-                  width={180}
-                  height={50}
-                  className="h-10 w-auto object-contain"
+                  width={200}
+                  height={55}
+                  className="h-11 w-auto object-contain"
                 />
               </div>
             </Link>

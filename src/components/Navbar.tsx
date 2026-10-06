@@ -66,11 +66,11 @@ export default function Navbar() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/uploads/2025/02/Industrial-Edge-Logo.webp"
+              src="/industrial-edge-logo.webp"
               alt="Industrial Edge"
-              width={190}
-              height={50}
-              className="h-11 w-auto object-contain"
+              width={220}
+              height={60}
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>
