@@ -96,19 +96,19 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                     <Link
                       href="/products"
-                      className="btn-animated inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 gap-2 w-full sm:w-auto"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all duration-200 gap-2 w-full sm:w-auto"
                     >
                       <ShoppingBag className="w-4 h-4" /> Shop Store Catalog
                     </Link>
                   </motion.div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                     <Link
                       href="/contact"
-                      className="btn-animated inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl hover:text-white w-full sm:w-auto hover:border-slate-500"
+                      className="inline-flex items-center justify-center px-7 py-3 text-xs sm:text-sm font-bold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl hover:text-white transition duration-200 w-full sm:w-auto hover:border-slate-500"
                     >
                       Request Custom RFQ
                     </Link>

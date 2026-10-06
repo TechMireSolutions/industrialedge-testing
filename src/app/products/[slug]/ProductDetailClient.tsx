@@ -148,15 +148,15 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <button
                   onClick={handleAddToCart}
-                  className={`btn-animated w-full py-3.5 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md ${
+                  className={`w-full py-3.5 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all duration-200 ${
                     added
                       ? "bg-emerald-600 text-white"
-                      : "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/20"
+                      : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-blue-500/20"
                   }`}
                 >
                   {added ? (
                     <>
-                      <Check className="w-5 h-5 animate-bounce" /> Added to Cart!
+                      <Check className="w-5 h-5" /> Added to Cart!
                     </>
                   ) : (
                     <>
@@ -166,7 +166,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Props)
                 </button>
                 <Link
                   href="/contact"
-                  className="btn-animated w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center gap-2 shadow-xs"
+                  className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center gap-2 shadow-xs transition"
                 >
                   Request B2B RFQ
                 </Link>
