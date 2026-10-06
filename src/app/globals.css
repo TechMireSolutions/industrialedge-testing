@@ -16,3 +16,23 @@ body {
 .font-logo {
   font-family: var(--font-montserrat), sans-serif;
 }
+
+/* Infinite Marquee Animation for Partners Carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

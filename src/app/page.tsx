@@ -232,21 +232,85 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand Partners Bar (Full Width) */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="w-full px-4 sm:px-8 lg:px-12 text-center">
-          <p className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-6">
+      {/* Brand Partners Bar (Continuous Infinite Marquee Slider) */}
+      <section className="py-14 bg-slate-50 border-t border-slate-100 overflow-hidden">
+        <div className="w-full text-center mb-8">
+          <p className="text-xs uppercase font-bold text-slate-400 tracking-wider">
             Supplying Products From Leading Industrial Brands
           </p>
-          <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 items-center">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div key={i} className="h-16 bg-white rounded-xl border border-gray-100 p-2 flex items-center justify-center relative shadow-2xs">
-                <Image
-                  src={`/uploads/2025/02/${i}-1.png`}
-                  alt={`Brand ${i}`}
-                  fill
-                  className="object-contain p-2 grayscale hover:grayscale-0 transition"
-                />
+        </div>
+
+        {/* Infinite Scrolling Track with edge fades */}
+        <div className="relative w-full overflow-hidden">
+          {/* Left & Right gradient fades for smooth look */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-marquee flex gap-6 items-center">
+            {/* Repeat list twice for seamless infinite loop */}
+            {[
+              "/uploads/2025/02/1-1.png",
+              "/uploads/2025/02/2-2.png",
+              "/uploads/2025/02/3-1.png",
+              "/uploads/2025/02/4-1.png",
+              "/uploads/2025/02/5-2.png",
+              "/uploads/2025/02/6-1.png",
+              "/uploads/2025/02/7-1.png",
+              "/uploads/2025/02/8-1.png",
+              "/uploads/2025/02/9-1.png",
+              "/uploads/2025/02/10-1.png",
+              "/uploads/2025/02/11-1.png",
+              "/uploads/2025/02/12-1.png",
+              "/uploads/2025/02/13-1.png",
+              "/uploads/2025/02/14.png",
+              "/uploads/2025/02/15.png",
+              "/uploads/2025/02/16.png",
+              "/uploads/2025/02/17.png",
+              "/uploads/2025/02/18.png",
+              "/uploads/2025/02/19.png",
+              "/uploads/2025/02/20.png",
+              "/uploads/2025/02/21.png",
+              "/uploads/2025/02/22.png",
+              "/uploads/2025/02/23.png",
+              "/uploads/2025/02/24.png",
+              // Second set for seamless loop
+              "/uploads/2025/02/1-1.png",
+              "/uploads/2025/02/2-2.png",
+              "/uploads/2025/02/3-1.png",
+              "/uploads/2025/02/4-1.png",
+              "/uploads/2025/02/5-2.png",
+              "/uploads/2025/02/6-1.png",
+              "/uploads/2025/02/7-1.png",
+              "/uploads/2025/02/8-1.png",
+              "/uploads/2025/02/9-1.png",
+              "/uploads/2025/02/10-1.png",
+              "/uploads/2025/02/11-1.png",
+              "/uploads/2025/02/12-1.png",
+              "/uploads/2025/02/13-1.png",
+              "/uploads/2025/02/14.png",
+              "/uploads/2025/02/15.png",
+              "/uploads/2025/02/16.png",
+              "/uploads/2025/02/17.png",
+              "/uploads/2025/02/18.png",
+              "/uploads/2025/02/19.png",
+              "/uploads/2025/02/20.png",
+              "/uploads/2025/02/21.png",
+              "/uploads/2025/02/22.png",
+              "/uploads/2025/02/23.png",
+              "/uploads/2025/02/24.png"
+            ].map((logoSrc, idx) => (
+              <div
+                key={idx}
+                className="w-36 h-20 bg-white rounded-xl border border-gray-100 p-3 shrink-0 flex items-center justify-center relative shadow-2xs hover:shadow-md transition-all duration-300"
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={logoSrc}
+                    alt={`Partner ${idx + 1}`}
+                    fill
+                    className="object-contain p-1 grayscale hover:grayscale-0 transition duration-300"
+                  />
+                </div>
               </div>
             ))}
           </div>
