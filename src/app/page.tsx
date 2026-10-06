@@ -308,7 +308,7 @@ export default function HomePage() {
                     src={logoSrc}
                     alt={`Partner ${idx + 1}`}
                     fill
-                    className="object-contain p-1 grayscale hover:grayscale-0 transition duration-300"
+                    className="object-contain p-1 transform group-hover:scale-105 transition-transform duration-200"
                   />
                 </div>
               </div>
