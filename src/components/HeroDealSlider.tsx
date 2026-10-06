@@ -32,19 +32,29 @@ export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
     : 0;
 
   return (
-    <div className="bg-white/10 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/10 text-white relative shadow-xl max-w-md mx-auto lg:ml-auto overflow-hidden">
-      {/* Top Tag & Slide Indicators */}
-      <div className="flex items-center justify-between mb-3">
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-red-600/90 text-white text-[11px] font-bold rounded-md uppercase tracking-wider">
-          <Flame className="w-3 h-3" /> Live B2B Deal
-        </span>
-        <div className="flex items-center gap-1.5">
+    <div className="relative w-full h-full min-h-[460px] lg:min-h-[520px] bg-gradient-to-br from-white/10 via-[#1e2352]/40 to-[#151838]/80 backdrop-blur-xl border border-white/15 rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col justify-between shadow-2xl overflow-hidden group">
+      {/* Decorative ambient gradient backdrop */}
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#059669]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#06b6d4]/20 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Top Header Tag & Interactive Indicators */}
+      <div className="relative z-10 flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-600/90 text-white text-xs font-bold rounded-lg uppercase tracking-wider shadow-sm">
+            <Flame className="w-3.5 h-3.5 animate-pulse" /> Live B2B Deal
+          </span>
+          <span className="text-[11px] font-semibold text-slate-300 hidden sm:inline">
+            Deal {currentIndex + 1} of {deals.length}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1.5 bg-black/20 p-1.5 rounded-full backdrop-blur-xs border border-white/10">
           {deals.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                currentIndex === idx ? "w-5 bg-blue-500" : "w-1.5 bg-white/30"
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                currentIndex === idx ? "w-6 bg-gradient-to-r from-[#059669] to-[#06b6d4]" : "w-2 bg-white/30 hover:bg-white/50"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -53,77 +63,89 @@ export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
       </div>
 
       {/* Animated Slide Content */}
-      <div className="relative min-h-[300px] flex flex-col justify-between">
+      <div className="relative z-10 flex-1 flex flex-col justify-between">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentDeal.id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            initial={{ opacity: 0, scale: 0.96, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: -15 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="flex flex-col justify-between h-full"
           >
-            {/* Product Image */}
-            <div className="relative aspect-16/10 rounded-xl bg-white/5 overflow-hidden p-4 mb-3 flex items-center justify-center">
-              <Image
-                src={currentDeal.image}
-                alt={currentDeal.name}
-                fill
-                className="object-contain p-2"
-                priority
-              />
-            </div>
+            {/* Large Product Showcase Area */}
+            <div className="relative w-full aspect-16/10 sm:aspect-16/9 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-6 flex items-center justify-center my-auto overflow-hidden shadow-inner group/img">
+              <div className="relative w-full h-full transform group-hover/img:scale-105 transition-transform duration-500">
+                <Image
+                  src={currentDeal.image}
+                  alt={currentDeal.name}
+                  fill
+                  className="object-contain p-2"
+                  priority
+                />
+              </div>
 
-            {/* Product Title & Info */}
-            <h3 className="font-bold text-base text-white mb-1.5 line-clamp-1">
-              {currentDeal.name}
-            </h3>
-            <p className="text-xs text-slate-300 line-clamp-2 mb-3">
-              {currentDeal.description}
-            </p>
-
-            {/* Price Box */}
-            <div className="flex items-baseline gap-2.5 mb-4">
-              <span className="text-xl font-bold text-white">
-                PKR {currentDeal.price.toLocaleString()}
-              </span>
-              {currentDeal.originalPrice && (
-                <span className="text-xs text-slate-400 line-through">
-                  PKR {currentDeal.originalPrice.toLocaleString()}
-                </span>
-              )}
               {discountPercent > 0 && (
-                <span className="text-[11px] text-emerald-400 font-bold ml-auto">
-                  Save {discountPercent}%
-                </span>
+                <div className="absolute top-3 right-3 bg-red-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-lg">
+                  -{discountPercent}% OFF
+                </div>
               )}
             </div>
 
-            {/* CTA Button */}
-            <Link
-              href={`/products/${currentDeal.slug}`}
-              className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition"
-            >
-              View Product Deal <ChevronRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* Product Meta & Details */}
+            <div className="pt-4">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+                {currentDeal.category.replace("-", " ")}
+              </span>
+              <h3 className="font-extrabold text-lg sm:text-xl text-white mb-2 line-clamp-1">
+                {currentDeal.name}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 mb-4 leading-relaxed">
+                {currentDeal.description}
+              </p>
+
+              {/* Price & Action Row */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-white/10">
+                <div className="flex items-baseline gap-2.5">
+                  <span className="text-2xl font-black text-white">
+                    PKR {currentDeal.price.toLocaleString()}
+                  </span>
+                  {currentDeal.originalPrice && (
+                    <span className="text-sm text-slate-400 line-through">
+                      PKR {currentDeal.originalPrice.toLocaleString()}
+                    </span>
+                  )}
+                  <span className="text-xs text-slate-300 font-medium">
+                    /{currentDeal.unit}
+                  </span>
+                </div>
+
+                <Link
+                  href={`/products/${currentDeal.slug}`}
+                  className="px-6 py-3 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/30 hover:shadow-emerald-600/50 transition-all duration-200"
+                >
+                  View Product Deal <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Left/Right arrow controls */}
+      {/* Left/Right Arrow Controls */}
       <button
         onClick={() => setCurrentIndex((prev) => (prev === 0 ? deals.length - 1 : prev - 1))}
-        className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white/80 hover:text-white transition backdrop-blur-xs z-10"
+        className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/40 hover:bg-[#059669] text-white border border-white/10 hover:border-[#059669] transition duration-200 backdrop-blur-md z-20 cursor-pointer shadow-lg"
         aria-label="Previous Deal"
       >
-        <ChevronLeft className="w-4 h-4" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={() => setCurrentIndex((prev) => (prev + 1) % deals.length)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white/80 hover:text-white transition backdrop-blur-xs z-10"
+        className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/40 hover:bg-[#059669] text-white border border-white/10 hover:border-[#059669] transition duration-200 backdrop-blur-md z-20 cursor-pointer shadow-lg"
         aria-label="Next Deal"
       >
-        <ChevronRight className="w-4 h-4" />
+        <ChevronRight className="w-5 h-5" />
       </button>
     </div>
   );

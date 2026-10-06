@@ -144,9 +144,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e224d]/85 z-0"></div>
 
         <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             {/* Left Copy */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -215,8 +215,8 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right: Continuous Live Deals Slider */}
-            <div className="lg:col-span-5">
+            {/* Right: Full-Dedicated Live Deals Showcase Slider */}
+            <div className="lg:col-span-6 xl:col-span-6 flex">
               <HeroDealSlider deals={PRODUCTS.slice(0, 6)} />
             </div>
           </div>
