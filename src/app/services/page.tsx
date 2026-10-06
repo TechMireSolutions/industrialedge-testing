@@ -155,25 +155,28 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Procurement Services Highlight */}
-      <section className="py-20 bg-[#151838] text-white relative overflow-hidden border-t border-[#1e2352]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] bg-[#059669]/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Procurement Services Highlight (Contrasting from Footer) */}
+      <section className="py-20 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 border-t border-slate-300">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#151838] via-[#1a1f4a] to-[#047857] text-white text-center p-10 sm:p-14 rounded-3xl shadow-2xl relative overflow-hidden border border-emerald-500/20">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto relative z-10">
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 font-bold tracking-wider uppercase text-xs">
-            Total Sourcing Solution
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black mt-3 text-white">Custom Orders & Bulk Sourcing</h2>
-          <p className="text-slate-300 mt-4 leading-relaxed text-sm sm:text-base">
-            Need rare industrial machinery parts or specialized items not listed above? Our dedicated sourcing team can procure exact specification items internationally or from regional industrial hubs across Pakistan.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold rounded-xl shadow-lg shadow-emerald-700/30 transition"
-            >
-              Submit Custom Request
-            </Link>
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-emerald-400/20 border border-emerald-400/40 text-emerald-300 font-bold tracking-wider uppercase text-xs mb-3 shadow-xs">
+                Total Sourcing Solution
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">Custom Orders & Bulk Sourcing</h2>
+              <p className="text-slate-200 mt-4 mb-8 leading-relaxed text-sm sm:text-base">
+                Need rare industrial machinery parts or specialized items not listed above? Our dedicated sourcing team can procure exact specification items internationally or from regional industrial hubs across Pakistan.
+              </p>
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold rounded-xl shadow-xl shadow-emerald-950/40 hover:scale-105 transition-all duration-200 inline-block text-sm"
+              >
+                Submit Custom Request
+              </Link>
+            </div>
           </div>
         </div>
       </section>
