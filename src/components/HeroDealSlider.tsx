@@ -13,16 +13,17 @@ interface HeroDealSliderProps {
 
 export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto slide every 3.5 seconds continuously
+  // Auto slide every 5 seconds, pauses when user hovers to click
   useEffect(() => {
-    if (!deals || deals.length === 0) return;
+    if (!deals || deals.length === 0 || isPaused) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % deals.length);
-    }, 3500);
+    }, 5000);
 
     return () => clearInterval(timer);
-  }, [deals]);
+  }, [deals, isPaused]);
 
   if (!deals || deals.length === 0) return null;
 
@@ -32,7 +33,11 @@ export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
     : 0;
 
   return (
-    <div className="relative w-full h-full min-h-[460px] lg:min-h-[520px] flex flex-col justify-between overflow-hidden group">
+    <div 
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className="relative w-full h-full min-h-[460px] lg:min-h-[520px] flex flex-col justify-between overflow-hidden group"
+    >
       {/* Top Header Tag & Interactive Indicators */}
       <div className="relative z-10 flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
@@ -115,7 +120,7 @@ export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
 
                 <Link
                   href={`/products/${currentDeal.slug}`}
-                  className="px-7 py-3 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/30 hover:shadow-emerald-600/50 transition-all duration-200"
+                  className="relative z-30 px-7 py-3 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/30 hover:shadow-emerald-600/50 transition-all duration-200 cursor-pointer pointer-events-auto shrink-0"
                 >
                   View Product Deal <ChevronRight className="w-4 h-4" />
                 </Link>
