@@ -31,7 +31,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Header Banner */}
-      <section className="bg-[#151838] text-white py-16 sm:py-24 relative overflow-hidden border-b border-[#1e2352]">
+      <section className="bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white py-16 sm:py-24 relative overflow-hidden border-b border-emerald-500/20">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e2352]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111538]/90 via-[#172554]/85 to-[#044337]/85"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs">
             Who We Are
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-[#151838] text-white relative overflow-hidden border-b border-[#1e2352]">
+      <section className="py-20 bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white relative overflow-hidden border-b border-emerald-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#1e2352]/70 p-8 sm:p-10 rounded-2xl border border-slate-700/60 shadow-xl flex flex-col justify-between">

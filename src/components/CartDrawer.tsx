@@ -32,7 +32,7 @@ export default function CartDrawer() {
             className="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-white shadow-2xl z-50 flex flex-col"
           >
             {/* Header */}
-            <div className="p-6 border-b border-[#1e2352] flex items-center justify-between bg-[#151838] text-white">
+            <div className="p-6 border-b border-emerald-500/20 flex items-center justify-between bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white">
               <div className="flex items-center gap-2.5">
                 <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-400/30">
                   <ShoppingBag className="w-5 h-5" />

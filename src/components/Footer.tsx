@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#151838] text-slate-300 border-t border-[#1e2352]">
+    <footer className="bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-slate-300 border-t border-emerald-500/20">
       <div className="w-full px-4 sm:px-8 lg:px-12 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: About & Logo */}

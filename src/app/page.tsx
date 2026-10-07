@@ -127,7 +127,7 @@ export default function HomePage() {
   return (
     <div className="bg-[#f8fafc] min-h-screen selection:bg-[#059669] selection:text-white">
       {/* Hero E-Commerce Banner with Brand Navy & Emerald Glow */}
-      <section className="relative bg-[#151838] text-white overflow-hidden py-8 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
+      <section className="relative bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white overflow-hidden py-8 lg:py-0 lg:h-[calc(100vh-114px)] lg:flex lg:items-center">
         {/* Ambient brand colored glowing orbs (Emerald & Deep Navy) */}
         <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-[#059669]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
@@ -141,7 +141,7 @@ export default function HomePage() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#151838] via-[#151838]/95 to-[#1e224d]/85 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111538]/90 via-[#172554]/85 to-[#044337]/90 z-0"></div>
 
         <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 py-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">

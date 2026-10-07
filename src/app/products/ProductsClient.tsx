@@ -44,7 +44,7 @@ export default function ProductsClient() {
   return (
     <div className="bg-gradient-to-b from-slate-100 via-slate-50 to-[#f8fafc] min-h-screen pb-16 selection:bg-[#059669] selection:text-white">
       {/* Brand Hero Header Banner */}
-      <div className="relative bg-[#151838] text-white overflow-hidden py-12 lg:py-16 mb-8 border-b border-[#1e2352]">
+      <div className="relative bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white overflow-hidden py-12 lg:py-16 mb-8 border-b border-emerald-500/20">
         {/* Ambient brand colored glowing orbs */}
         <div className="absolute -top-12 -left-12 w-96 h-96 bg-[#059669]/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-[#06b6d4]/15 rounded-full blur-3xl pointer-events-none" />
