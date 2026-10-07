@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ConditionalShell from "@/components/ConditionalShell";
 import { CartProvider } from "@/context/CartContext";
 import "./globals.css";
 
@@ -42,11 +39,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <CartProvider>
-          <Navbar />
-          <CartDrawer />
-          <main className="flex-grow">{children}</main>
-          <WhatsAppButton />
-          <Footer />
+          <ConditionalShell>{children}</ConditionalShell>
         </CartProvider>
       </body>
     </html>
