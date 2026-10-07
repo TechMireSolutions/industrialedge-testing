@@ -3,6 +3,7 @@ import { Montserrat, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { CartProvider } from "@/context/CartContext";
 import "./globals.css";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Navbar />
           <CartDrawer />
           <main className="flex-grow">{children}</main>
+          <WhatsAppButton />
           <Footer />
         </CartProvider>
       </body>
