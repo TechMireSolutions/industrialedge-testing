@@ -176,10 +176,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-y-3">
           <p>© {new Date().getFullYear()} Industrial Edge. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 sm:mt-0">
-            <span>Boost Your Business Procurement Across Pakistan</span>
+          <div className="flex items-center space-x-6">
+            <span>
+              Designed by{" "}
+              <a
+                href="https://techmiresolutions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 hover:text-emerald-300 font-semibold underline decoration-emerald-500/40 hover:decoration-emerald-400 transition"
+              >
+                Techmire Solutions
+              </a>
+            </span>
           </div>
         </div>
       </div>
