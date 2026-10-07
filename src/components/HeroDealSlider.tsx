@@ -74,20 +74,20 @@ export default function HeroDealSlider({ deals }: HeroDealSliderProps) {
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="flex flex-col justify-between h-full"
           >
-            {/* Clean Product Showcase Area Without Glassmorphism */}
-            <div className="relative w-full aspect-16/10 sm:aspect-16/9 rounded-2xl bg-[#1e224d]/60 border border-slate-700/60 p-6 flex items-center justify-center my-auto overflow-hidden group/img">
-              <div className="relative w-full h-full transform group-hover/img:scale-105 transition-transform duration-500">
+            {/* Borderless Free-Floating Product Showcase Area */}
+            <div className="relative w-full aspect-16/10 sm:aspect-16/9 flex items-center justify-center my-auto overflow-hidden group/img">
+              <div className="relative w-full h-full transform group-hover/img:scale-105 transition-transform duration-500 flex items-center justify-center">
                 <Image
                   src={currentDeal.image}
                   alt={currentDeal.name}
                   fill
-                  className="object-contain p-2"
+                  className="object-contain drop-shadow-2xl"
                   priority
                 />
               </div>
 
               {discountPercent > 0 && (
-                <div className="absolute top-3 right-3 bg-red-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-md">
+                <div className="absolute top-2 right-2 bg-red-600 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-lg shadow-red-900/50">
                   -{discountPercent}% OFF
                 </div>
               )}
