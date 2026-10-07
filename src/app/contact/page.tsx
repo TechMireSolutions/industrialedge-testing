@@ -51,68 +51,75 @@ export default function ContactPage() {
       <section className="py-20 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Contact details */}
-            <div className="lg:col-span-5 space-y-8">
-              <div>
-                <span className="text-[#059669] font-bold tracking-wider uppercase text-xs">Reach Out</span>
-                <h2 className="text-3xl font-extrabold text-[#151838] mt-2 mb-4 tracking-tight">Get In Touch</h2>
-                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+            {/* Contact details Card with Brand Logo Gradient */}
+            <div className="lg:col-span-5 bg-gradient-to-br from-[#111538] via-[#172554] to-[#044337] text-white p-7 sm:p-9 rounded-3xl border border-emerald-500/20 shadow-xl space-y-7 relative overflow-hidden">
+              {/* Subtle ambient glow inside card */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs mb-2">
+                  Reach Out
+                </span>
+                <h2 className="text-3xl font-extrabold text-white mt-2 mb-3 tracking-tight">Get In Touch</h2>
+                <p className="text-slate-300 leading-relaxed text-sm">
                   Our procurement specialists are available to review your inquiries, provide formal quotations, or arrange an on-site visit to your facility.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <div className="p-3 bg-emerald-50 text-[#059669] rounded-xl shrink-0 border border-emerald-100">
-                    <MapPin className="w-6 h-6" />
+              <div className="space-y-4 relative z-10">
+                <div className="flex items-start gap-4 p-4.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-xs transition">
+                  <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0 border border-emerald-400/30">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#151838] text-base">Office Address</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-bold text-white text-sm">Office Address</h4>
+                    <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                       Suite M-107 Odeon Center Regal chowk saddar Karachi, Pakistan
                     </p>
                     <a
                       href="https://maps.app.goo.gl/52dT7YxfarFZ4nPQ7"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold text-[#059669] hover:underline mt-2 inline-block"
+                      className="text-xs font-bold text-emerald-400 hover:text-emerald-300 hover:underline mt-1.5 inline-block"
                     >
                       View on Google Maps →
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <div className="p-3 bg-emerald-50 text-[#059669] rounded-xl shrink-0 border border-emerald-100">
-                    <Phone className="w-6 h-6" />
+                <div className="flex items-start gap-4 p-4.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-xs transition">
+                  <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0 border border-emerald-400/30">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#151838] text-base">Direct Phone & WhatsApp</h4>
-                    <p className="text-sm text-slate-600 mt-1">+92 332 2316225</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    <h4 className="font-bold text-white text-sm">Direct Phone & WhatsApp</h4>
+                    <p className="text-xs text-slate-300 mt-1">+92 332 2316225</p>
+                    <p className="text-[11px] text-emerald-400/90 mt-0.5 font-medium">Mon - Sat: 9:00 AM - 6:00 PM</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <div className="p-3 bg-emerald-50 text-[#059669] rounded-xl shrink-0 border border-emerald-100">
-                    <Mail className="w-6 h-6" />
+                <div className="flex items-start gap-4 p-4.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-xs transition">
+                  <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0 border border-emerald-400/30">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#151838] text-base">Email Inquiries</h4>
-                    <p className="text-sm text-slate-600 mt-1">info@industrialedge.pk</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Response within 24 business hours</p>
+                    <h4 className="font-bold text-white text-sm">Email Inquiries</h4>
+                    <p className="text-xs text-slate-300 mt-1">info@industrialedge.pk</p>
+                    <p className="text-[11px] text-emerald-400/90 mt-0.5 font-medium">Response within 24 business hours</p>
                   </div>
                 </div>
 
                 {/* Social Channels Box */}
-                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <h4 className="font-bold text-[#151838] text-sm mb-3">Official Corporate Handles</h4>
-                  <div className="flex items-center gap-3">
+                <div className="p-4.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-xs">
+                  <h4 className="font-bold text-white text-xs mb-3 tracking-wide uppercase">
+                    Official Corporate Handles
+                  </h4>
+                  <div className="flex flex-wrap items-center gap-2">
                     <a
                       href="https://linkedin.com/company/industrial-edge-pk"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-[#059669] text-white text-xs font-bold transition flex items-center gap-1.5 border border-white/20 hover:border-emerald-400"
                     >
                       LinkedIn
                     </a>
@@ -120,7 +127,7 @@ export default function ContactPage() {
                       href="https://facebook.com/industrialedge.pk"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-[#059669] text-white text-xs font-bold transition flex items-center gap-1.5 border border-white/20 hover:border-emerald-400"
                     >
                       Facebook
                     </a>
@@ -128,7 +135,7 @@ export default function ContactPage() {
                       href="https://wa.me/923322316225"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-[#059669] text-[#059669] hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-emerald-200/60"
+                      className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-xs"
                     >
                       WhatsApp
                     </a>
@@ -136,7 +143,7 @@ export default function ContactPage() {
                       href="https://instagram.com/industrialedge.pk"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-[#151838] text-slate-700 hover:text-white text-xs font-bold transition flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-[#059669] text-white text-xs font-bold transition flex items-center gap-1.5 border border-white/20 hover:border-emerald-400"
                     >
                       Instagram
                     </a>

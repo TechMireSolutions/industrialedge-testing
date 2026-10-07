@@ -155,18 +155,24 @@ export default function PortfolioPage() {
       </section>
 
       {/* Partner Brands Grid with Staggered Fade In */}
-      <section className="py-20 bg-slate-100 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-r from-[#111538] via-[#172554] to-[#044337] text-white border-t border-emerald-500/20 relative overflow-hidden">
+        {/* Ambient brand orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-[#059669]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-[#06b6d4]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <span className="text-[#059669] font-bold tracking-wider uppercase text-xs">Certified Sourcing</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#151838] mt-2 tracking-tight">Brands & Partners We Supply</h2>
-            <p className="text-slate-600 mt-4 text-base">
-              We procure and distribute products from industry-leading global and local manufacturers.
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-wider shadow-xs mb-3">
+              Certified Sourcing
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">Brands & Partners We Supply</h2>
+            <p className="text-slate-300 mt-4 text-base">
+              We procure and distribute authentic products from industry-leading global and local manufacturers.
             </p>
           </motion.div>
 
@@ -181,20 +187,48 @@ export default function PortfolioPage() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ scale: 1.06, y: -3, transition: { duration: 0.2 } }}
-                className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-center h-24 hover:shadow-lg hover:border-emerald-300 transition-all duration-200 cursor-pointer"
+                whileHover={{ scale: 1.08, y: -4, transition: { duration: 0.2 } }}
+                className="bg-white p-4 rounded-2xl border border-white/20 shadow-md flex items-center justify-center h-24 hover:shadow-xl hover:border-emerald-400 transition-all duration-200 cursor-pointer"
               >
                 <div className="relative w-full h-full">
                   <Image
                     src={logo}
                     alt={`Partner ${idx + 1}`}
                     fill
-                    className="object-contain"
+                    className="object-contain p-1"
                   />
                 </div>
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Bottom Procurement CTA Section */}
+      <section className="py-16 bg-[#0c102a] text-white border-t border-slate-800 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Need Tailored Procurement For Your Facility?
+          </h3>
+          <p className="text-slate-300 mt-3 text-sm sm:text-base leading-relaxed">
+            From precision tooling to certified safety workwear, our specialists deliver bulk orders on schedule with competitive corporate pricing.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-900/30 transition text-center"
+            >
+              Submit Corporate RFQ →
+            </Link>
+            <a
+              href="https://wa.me/923322316225"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm rounded-xl transition text-center"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </div>
