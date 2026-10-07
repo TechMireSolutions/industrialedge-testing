@@ -36,21 +36,66 @@ export default function CheckoutPage() {
 
   const estimatedGst = Math.round(cartTotal * 0.18);
   const grandTotal = cartTotal + estimatedGst;
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const generatedId = "IE-" + Math.floor(100000 + Math.random() * 900000);
-    setOrderId(generatedId);
-    setOrderPlaced(true);
-    clearCart();
+    setSubmitting(true);
+    setErrorMsg("");
+
     try {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
+      const orderPayload = {
+        companyName: formData.companyName,
+        ntnNumber: formData.ntnNumber,
+        contactPerson: formData.contactPerson,
+        email: formData.email,
+        phone: formData.phone,
+        deliveryAddress: formData.deliveryAddress,
+        city: formData.city,
+        paymentMethod: formData.paymentMethod,
+        poNumber: formData.poNumber,
+        notes: formData.notes,
+        items: cart.map((item) => ({
+          productId: item.product.id,
+          name: item.product.name,
+          price: item.product.price,
+          quantity: item.quantity,
+          unit: item.product.unit || "Piece",
+          image: item.product.image,
+        })),
+        subtotal: cartTotal,
+        gstAmount: estimatedGst,
+        totalAmount: grandTotal,
+      };
+
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderPayload),
       });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setOrderId(data.orderNumber);
+        setOrderPlaced(true);
+        clearCart();
+        try {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+          });
+        } catch {
+          // Ignore
+        }
+      } else {
+        setErrorMsg(data.error || "Failed to process order. Please try again.");
+      }
     } catch {
-      // Ignore
+      setErrorMsg("Network error. Please check your connection and retry.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -354,11 +399,24 @@ export default function CheckoutPage() {
                     </div>
                   </div>
 
+                  {errorMsg && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-xs font-medium">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-black text-xs sm:text-sm rounded-xl shadow-lg shadow-emerald-700/25 hover:shadow-emerald-600/40 transition flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={submitting}
+                    className="w-full py-4 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-black text-xs sm:text-sm rounded-xl shadow-lg shadow-emerald-700/25 hover:shadow-emerald-600/40 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                   >
-                    <Lock className="w-4 h-4" /> Place Formal Procurement Order
+                    {submitting ? (
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <Lock className="w-4 h-4" /> Place Formal Procurement Order
+                      </>
+                    )}
                   </button>
 
                   <div className="p-3 bg-slate-50 rounded-xl text-[10px] text-slate-500 space-y-1">

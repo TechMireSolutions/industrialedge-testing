@@ -3,21 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PRODUCTS } from "@/data/products";
+import { getProductBySlug, getProducts } from "@/lib/db";
 import ProductDetailClient from "./ProductDetailClient";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
-  return PRODUCTS.map((p) => ({
+  const products = await getProducts();
+  return products.map((p) => ({
     slug: p.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = (await getProductBySlug(slug)) || PRODUCTS.find((p) => p.slug === slug);
   if (!product) return { title: "Product Not Found" };
 
   return {
@@ -28,13 +32,14 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = (await getProductBySlug(slug)) || PRODUCTS.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = PRODUCTS.filter(
+  const allProducts = await getProducts();
+  const relatedProducts = allProducts.filter(
     (p) => p.category === product.category && p.id !== product.id
   ).slice(0, 4);
 

@@ -15,7 +15,12 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProductsClient() {
+interface Props {
+  initialProducts?: Product[];
+}
+
+export default function ProductsClient({ initialProducts }: Props) {
+  const allProducts = initialProducts && initialProducts.length > 0 ? initialProducts : PRODUCTS;
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
   const initialQuery = searchParams.get("q") || "";
@@ -25,7 +30,7 @@ export default function ProductsClient() {
   const [sortBy, setSortBy] = useState<"featured" | "price-asc" | "price-desc" | "rating">("featured");
 
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => {
+    return allProducts.filter((p) => {
       const matchesCategory =
         selectedCategory === "all" || p.category === selectedCategory;
       const matchesSearch =

@@ -1,0 +1,260 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Heavy-Duty Brushless Cordless Impact Drill Kit 20V",
+    "slug": "cordless-impact-drill-kit-20v",
+    "category": "hardware-tools",
+    "price": 24500,
+    "originalPrice": 28000,
+    "rating": 4.9,
+    "reviewsCount": 38,
+    "inStock": true,
+    "isFeatured": true,
+    "isNew": true,
+    "image": "/uploads/2025/03/200.png",
+    "description": "Industrial grade 20V brushless impact drill with twin 4.0Ah Li-ion batteries, fast smart charger, and 32-piece heavy duty bit set in an armor case.",
+    "specifications": {
+      "Voltage": "20V Max",
+      "Max Torque": "85 Nm",
+      "Battery Capacity": "4.0 Ah (Twin)",
+      "Chuck Size": "13mm All-Metal Keyless"
+    },
+    "minOrderQty": 1,
+    "unit": "Kit"
+  },
+  {
+    "id": "prod-2",
+    "name": "Commercial High-Efficiency Ceiling Air Conditioner 4-Ton",
+    "slug": "commercial-ceiling-air-conditioner-4-ton",
+    "category": "electronic-appliances",
+    "price": 385000,
+    "originalPrice": 420000,
+    "rating": 4.8,
+    "reviewsCount": 19,
+    "inStock": true,
+    "isFeatured": true,
+    "image": "/uploads/2025/03/198.png",
+    "description": "Full inverter commercial grade 4-ton cassette AC designed for corporate offices, manufacturing cleanrooms, and data server areas.",
+    "specifications": {
+      "Capacity": "48,000 BTU (4 Ton)",
+      "Technology": "DC Inverter Eco Cool",
+      "Refrigerant": "R410A / R32",
+      "Warranty": "3 Years Corporate Comprehensive"
+    },
+    "minOrderQty": 1,
+    "unit": "Unit"
+  },
+  {
+    "id": "prod-3",
+    "name": "Executive Ergonomic High-Back Breathable Mesh Chair",
+    "slug": "executive-ergonomic-mesh-chair",
+    "category": "office-supplies",
+    "price": 32000,
+    "originalPrice": 36500,
+    "rating": 4.7,
+    "reviewsCount": 52,
+    "inStock": true,
+    "isFeatured": true,
+    "image": "/uploads/2025/03/197.png",
+    "description": "Dynamic lumbar support ergonomic chair featuring heavy-duty 4D adjustable armrests, multi-lock recline, and certified class-4 gas lift.",
+    "specifications": {
+      "Weight Capacity": "150 kg",
+      "Base Material": "Reinforced Aluminum Alloy",
+      "Warranty": "2 Years On-Site Replacement"
+    },
+    "minOrderQty": 2,
+    "unit": "Piece"
+  },
+  {
+    "id": "prod-4",
+    "name": "Certified Industrial Safety Helmet with Ratchet Suspension (Class E)",
+    "slug": "industrial-safety-helmet-class-e",
+    "category": "safety-equipment",
+    "price": 2450,
+    "originalPrice": 2900,
+    "rating": 5,
+    "reviewsCount": 124,
+    "inStock": true,
+    "isFeatured": true,
+    "isNew": true,
+    "image": "/uploads/2025/03/199.png",
+    "description": "ANSI Z89.1 and CE certified high-density polyethylene protective hard hat with customizable 6-point ratchet suspension and reflective night stickers.",
+    "specifications": {
+      "Standard": "ANSI Z89.1 Type 1, Class E",
+      "Material": "UV-Stabilized HDPE",
+      "Suspension": "Wheel Ratchet 6-Point"
+    },
+    "minOrderQty": 10,
+    "unit": "Pack of 10"
+  },
+  {
+    "id": "prod-5",
+    "name": "Industrial Synthetic ISO VG 46 Anti-Wear Hydraulic Fluid (208L Drum)",
+    "slug": "anti-wear-hydraulic-fluid-iso-46-drum",
+    "category": "industrial-chemicals",
+    "price": 145000,
+    "originalPrice": 158000,
+    "rating": 4.9,
+    "reviewsCount": 14,
+    "inStock": true,
+    "isFeatured": true,
+    "image": "/uploads/2025/03/196.png",
+    "description": "Premium zinc-free anti-wear hydraulic oil formulated for heavy industrial injection molding, stamping presses, and CNC hydraulic units.",
+    "specifications": {
+      "Viscosity Grade": "ISO VG 46",
+      "Volume": "208 Liters (Steel Drum)",
+      "Operating Range": "-20°C to 120°C"
+    },
+    "minOrderQty": 1,
+    "unit": "Drum"
+  },
+  {
+    "id": "prod-6",
+    "name": "3-Phase Moulded Case Circuit Breaker (MCCB) 400A 50kA",
+    "slug": "3-phase-mccb-400a-50ka",
+    "category": "electrical-components",
+    "price": 58000,
+    "originalPrice": 65000,
+    "rating": 4.8,
+    "reviewsCount": 27,
+    "inStock": true,
+    "isFeatured": true,
+    "image": "/uploads/2025/03/195.png",
+    "description": "High breaking capacity thermal-magnetic 400 Amp 3-pole MCCB designed for distribution panels, plant protection, and industrial motor feeders.",
+    "specifications": {
+      "Rated Current": "400A",
+      "Breaking Capacity": "50 kA at 415V",
+      "Poles": "3-Pole (3P)",
+      "Standard": "IEC 60947-2"
+    },
+    "minOrderQty": 1,
+    "unit": "Unit"
+  },
+  {
+    "id": "prod-7",
+    "name": "Steel-Toe Puncture-Resistant Heavy Work Safety Boots (S3 SRC)",
+    "slug": "steel-toe-heavy-work-safety-boots-s3",
+    "category": "safety-equipment",
+    "price": 8900,
+    "originalPrice": 11000,
+    "rating": 4.9,
+    "reviewsCount": 88,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/199.png",
+    "description": "Genuine full-grain leather boots with 200J impact steel toe cap, Kevlar puncture-proof midsole, and dual-density PU oil/acid resistant sole.",
+    "specifications": {
+      "Standard": "EN ISO 20345:2011 S3 SRC",
+      "Upper": "Water-Repellent Buffalo Leather",
+      "Sizes Available": "39 - 46 (EU)"
+    },
+    "minOrderQty": 5,
+    "unit": "Pairs"
+  },
+  {
+    "id": "prod-8",
+    "name": "Complete Heavy-Duty Professional Workshop Tool Chest 245 Pcs",
+    "slug": "workshop-tool-chest-245-pcs",
+    "category": "hardware-tools",
+    "price": 185000,
+    "originalPrice": 210000,
+    "rating": 5,
+    "reviewsCount": 16,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/200.png",
+    "description": "7-drawer rolling steel cabinet loaded with chrome vanadium spanners, sockets, torque wrenches, and pneumatic couplers.",
+    "specifications": {
+      "Total Pieces": "245 Precision Tools",
+      "Cabinet": "Reinforced 1.2mm Cold Rolled Steel",
+      "Wheels": "Heavy 5-inch Casters with Lock"
+    },
+    "minOrderQty": 1,
+    "unit": "Set"
+  },
+  {
+    "id": "prod-9",
+    "name": "Bulk Premium Corporate A4 Copier Paper 80GSM (Pallet of 200 Reams)",
+    "slug": "bulk-a4-copier-paper-80gsm-pallet",
+    "category": "office-supplies",
+    "price": 240000,
+    "originalPrice": 265000,
+    "rating": 4.9,
+    "reviewsCount": 63,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/197.png",
+    "description": "Ultra-white 102% brightness 80GSM woodfree jam-resistant copy paper for high-speed laser printers and digital copiers.",
+    "specifications": {
+      "Paper Weight": "80 GSM",
+      "Reams": "200 Reams (100,000 Sheets)",
+      "Brightness": "102% CIE 165"
+    },
+    "minOrderQty": 1,
+    "unit": "Pallet (200 Reams)"
+  },
+  {
+    "id": "prod-10",
+    "name": "Enterprise Multi-Gigabit 24-Port Managed PoE+ Switch 370W",
+    "slug": "24-port-managed-poe-plus-switch",
+    "category": "electronic-appliances",
+    "price": 125000,
+    "originalPrice": 140000,
+    "rating": 4.8,
+    "reviewsCount": 22,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/198.png",
+    "description": "Layer-3 managed gigabit network switch with 24 PoE+ 802.3at ports, 4x 10G SFP+ uplink slots, and redundant power architecture.",
+    "specifications": {
+      "PoE Budget": "370 Watts",
+      "Uplinks": "4x 10G SFP+ Fiber",
+      "Switching Capacity": "128 Gbps"
+    },
+    "minOrderQty": 1,
+    "unit": "Unit"
+  },
+  {
+    "id": "prod-11",
+    "name": "Industrial Rapid Degreaser & Electrical Contact Cleaner (12 x 500ml)",
+    "slug": "rapid-degreaser-contact-cleaner-case",
+    "category": "industrial-chemicals",
+    "price": 14800,
+    "originalPrice": 16500,
+    "rating": 4.7,
+    "reviewsCount": 45,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/196.png",
+    "description": "Non-conductive, zero-residue, fast-evaporating solvent aerosol spray for cleaning motor windings, circuit boards, and industrial switches.",
+    "specifications": {
+      "Dielectric Strength": "Up to 35,000 Volts",
+      "Pack": "Case of 12 Cans (500ml each)",
+      "Residue": "0.00% Clean Evaporation"
+    },
+    "minOrderQty": 1,
+    "unit": "Case (12 Cans)"
+  },
+  {
+    "id": "prod-12",
+    "name": "Heavy-Duty 4-Core Copper Armored Industrial Cable 16mm² (100M Roll)",
+    "slug": "4-core-copper-armored-cable-16mm-100m",
+    "category": "electrical-components",
+    "price": 215000,
+    "originalPrice": 235000,
+    "rating": 4.9,
+    "reviewsCount": 31,
+    "inStock": true,
+    "isFeatured": false,
+    "image": "/uploads/2025/03/195.png",
+    "description": "99.9% pure electrolytic annealed copper conductor with XLPE insulation, galvanized steel wire armor (SWA), and tough PVC bedding.",
+    "specifications": {
+      "Conductor Size": "16mm² (4 Core)",
+      "Voltage Grade": "600/1000V (0.6/1kV)",
+      "Length": "100 Meters Wooden Drum",
+      "Standard": "BS 5467 / IEC 60502-1"
+    },
+    "minOrderQty": 1,
+    "unit": "100M Roll"
+  }
+]

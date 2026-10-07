@@ -14,10 +14,32 @@ export default function ContactPage() {
     service: "General Procurement Inquiry",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMsg(data.error || "Failed to submit inquiry. Please try again.");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and retry.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -266,11 +288,24 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {errorMsg && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-xs font-medium">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-700/30 transition cursor-pointer"
+                    disabled={submitting}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#059669] to-[#047857] hover:from-[#047857] hover:to-[#065f46] text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-700/30 transition cursor-pointer disabled:opacity-60"
                   >
-                    <Send className="w-4 h-4" /> Submit Inquiry
+                    {submitting ? (
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" /> Submit Inquiry
+                      </>
+                    )}
                   </button>
                 </form>
               )}
