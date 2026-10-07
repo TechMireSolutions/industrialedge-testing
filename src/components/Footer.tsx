@@ -176,9 +176,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-y-3">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col items-center justify-center text-center text-xs text-slate-400 gap-2.5">
           <p>© {new Date().getFullYear()} Industrial Edge. All rights reserved.</p>
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
             <span>
               Designed by{" "}
               <a
@@ -189,6 +189,10 @@ export default function Footer() {
               >
                 Techmire Solutions
               </a>
+            </span>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="text-slate-300 font-medium">
+              Developed by <span className="text-emerald-400 font-semibold">Hassan Abbas</span>
             </span>
           </div>
         </div>
