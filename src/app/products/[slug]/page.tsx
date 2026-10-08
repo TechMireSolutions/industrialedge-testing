@@ -6,6 +6,8 @@ import { PRODUCTS, Product } from "@/data/products";
 import { getProductBySlug, getProducts } from "@/lib/db";
 import ProductDetailClient from "./ProductDetailClient";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ slug: string }> | { slug: string };
 }

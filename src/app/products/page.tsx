@@ -3,6 +3,8 @@ import ProductsClient from "./ProductsClient";
 import { getProducts } from "@/lib/db";
 import { PRODUCTS, Product } from "@/data/products";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Industrial Store & Catalog - Industrial Edge",
   description: "Browse certified industrial tools, electronics, PPE, cabling, lubricants and office stationery with real-time wholesale pricing.",
@@ -13,18 +15,9 @@ interface PageProps {
 }
 
 export default async function Page({ searchParams }: PageProps) {
-  let initialCategory = "all";
-  let initialQuery = "";
-
-  try {
-    if (searchParams) {
-      const sp = await searchParams;
-      initialCategory = sp?.category || "all";
-      initialQuery = sp?.q || "";
-    }
-  } catch {
-    // build time fallback
-  }
+  const sp = searchParams ? await searchParams : undefined;
+  const initialCategory = sp?.category || "all";
+  const initialQuery = sp?.q || "";
 
   let products: Product[] = [];
   try {
