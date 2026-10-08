@@ -2,33 +2,20 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PRODUCTS } from "@/data/products";
+import { PRODUCTS, Product } from "@/data/products";
 import { getProductBySlug, getProducts } from "@/lib/db";
 import ProductDetailClient from "./ProductDetailClient";
 
 interface Props {
-  params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  try {
-    const products = await getProducts();
-    if (products && products.length > 0) {
-      return products.map((p) => ({
-        slug: p.slug,
-      }));
-    }
-  } catch (err) {
-    console.warn("generateStaticParams fallback to PRODUCTS:", err);
-  }
-  return PRODUCTS.map((p) => ({
-    slug: p.slug,
-  }));
+  params: Promise<{ slug: string }> | { slug: string };
 }
 
 export async function generateMetadata({ params }: Props) {
   try {
-    const { slug } = await params;
+    const resolvedParams = params && typeof (params as any).then === "function" ? await params : (params as any);
+    const slug = resolvedParams?.slug;
+    if (!slug) return { title: "Product - Industrial Edge" };
+
     const product = (await getProductBySlug(slug)) || PRODUCTS.find((p) => p.slug === slug);
     if (!product) return { title: "Product Not Found" };
 
@@ -44,19 +31,23 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function ProductDetailPage({ params }: Props) {
-  const { slug } = await params;
-  let product = null;
-  try {
-    product = (await getProductBySlug(slug)) || PRODUCTS.find((p) => p.slug === slug);
-  } catch {
-    product = PRODUCTS.find((p) => p.slug === slug);
+  const resolvedParams = params && typeof (params as any).then === "function" ? await params : (params as any);
+  const slug = resolvedParams?.slug;
+
+  let product: Product | null = null;
+  if (slug) {
+    try {
+      product = (await getProductBySlug(slug)) || PRODUCTS.find((p) => p.slug === slug) || null;
+    } catch {
+      product = PRODUCTS.find((p) => p.slug === slug) || null;
+    }
   }
 
   if (!product) {
     notFound();
   }
 
-  let allProducts = [];
+  let allProducts: Product[] = [];
   try {
     allProducts = await getProducts();
   } catch {
@@ -83,10 +74,10 @@ export default async function ProductDetailPage({ params }: Props) {
               <Link href="/products" className="hover:text-emerald-400 transition-colors">Store</Link>
               <span className="text-slate-500">/</span>
               <Link 
-                href={`/products?category=${product.category}`} 
+                href={`/products?category=${product.category || 'all'}`} 
                 className="hover:text-emerald-400 transition-colors capitalize"
               >
-                {product.category.replace("-", " ")}
+                {(product.category || 'general').replace("-", " ")}
               </Link>
               <span className="text-slate-500">/</span>
               <span className="text-emerald-300 font-semibold truncate max-w-sm">{product.name}</span>
@@ -95,7 +86,7 @@ export default async function ProductDetailPage({ params }: Props) {
             {/* Quick Status Tags */}
             <div className="flex items-center gap-2.5 shrink-0">
               <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/15 text-[11px] font-semibold text-slate-200">
-                SKU: IE-{product.id.toString().padStart(4, "0")}
+                SKU: IE-{String(product.id || '').replace(/^prod-/, '').padStart(4, "0")}
               </span>
               <span className="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> In Stock & Ready
