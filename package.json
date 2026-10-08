@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node -e \"if(process.platform==='linux'){try{require('child_process').execSync('npm rebuild sqlite3 --build-from-source',{stdio:'inherit'})}catch(e){console.warn('sqlite3 rebuild warning:',e)}}\""
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
@@ -22,7 +23,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "sqlite": "^5.1.1",
-    "sqlite3": "^6.0.1"
+    "sqlite3": "5.1.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

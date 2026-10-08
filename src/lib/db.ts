@@ -1,8 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
 import bcrypt from "bcryptjs";
-import sqlite3 from "sqlite3";
-import { open, Database } from "sqlite";
+import type sqlite3 from "sqlite3";
+import type { Database } from "sqlite";
 import { Product, PRODUCTS as initialProducts } from "@/data/products";
 
 // Interfaces
@@ -269,9 +269,14 @@ export async function getDb(): Promise<Database<sqlite3.Database, sqlite3.Statem
       const dbDir = path.dirname(dbPath);
       await fs.mkdir(dbDir, { recursive: true });
 
-      const db = await open({
+      const sqlite3Module = await import("sqlite3");
+      const sqliteModule = await import("sqlite");
+      const sqlite3Driver = (sqlite3Module.default || sqlite3Module) as unknown as typeof sqlite3;
+      const openDb = sqliteModule.open;
+
+      const db = await openDb({
         filename: dbPath,
-        driver: sqlite3.Database,
+        driver: sqlite3Driver.Database,
       });
 
       await db.run("PRAGMA busy_timeout = 15000;");
