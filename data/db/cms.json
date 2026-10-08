@@ -1,0 +1,88 @@
+{
+  "corporate": {
+    "title": "For Corporate & Industrial Procurement",
+    "subtitle": "Streamlined bulk procurement contracts, FBR verified NTN input tax credits, dedicated technical account management, and nationwide site dispatches.",
+    "ctaText": "Request Corporate Quotation (RFQ)",
+    "ctaLink": "/contact",
+    "features": [
+      "Commercial Tax Invoices with verified NTN & STRN for corporate audits",
+      "Tiered volume discount matrices for enterprise-scale procurements",
+      "Nationwide dedicated freight logistics with on-site offloading support",
+      "Corporate credit facilities (Net 30/60) for registered enterprises"
+    ]
+  },
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "B2B Procurement",
+      "question": "How do corporate purchase orders and NTN tax credits work?",
+      "answer": "We issue computerized commercial tax invoices containing full active STRN and NTN credentials, allowing corporate accounting departments to claim full sales tax input adjustments with the Federal Board of Revenue (FBR).",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "faq-2",
+      "category": "Logistics & Delivery",
+      "question": "What are your delivery schedules across Pakistan?",
+      "answer": "Karachi Metro shipments are dispatched within 24 hours. Inter-city shipments across Sindh, Punjab, and KPK arrive within 2-4 business days via verified logistics haulers.",
+      "order": 2,
+      "active": true
+    },
+    {
+      "id": "faq-3",
+      "category": "Warranty & Support",
+      "question": "Do industrial tools and heavy equipment carry warranty?",
+      "answer": "All power equipment, HVAC systems, and precision instruments include standard 1 to 3 years corporate replacement warranty, backed by on-site technical inspection.",
+      "order": 3,
+      "active": true
+    }
+  ],
+  "policies": [
+    {
+      "id": "pol-1",
+      "slug": "terms-and-conditions",
+      "title": "Corporate Procurement Terms & Conditions",
+      "content": "All purchases are subject to Industrial Edge formal quotation parameters, verified corporate PO submission, and agreed payment terms.",
+      "published": true,
+      "updatedAt": "2026-10-07T07:28:59.178Z"
+    },
+    {
+      "id": "pol-2",
+      "slug": "privacy-policy",
+      "title": "Corporate Privacy & Data Protection",
+      "content": "Industrial Edge enforces strict encryption standards. Enterprise buyer data, transaction invoices, and RFQ pricing agreements are kept strictly confidential.",
+      "published": true,
+      "updatedAt": "2026-10-07T07:28:59.178Z"
+    }
+  ],
+  "brands": {
+    "heading": "Supplying Products From Leading Industrial Brands",
+    "active": true,
+    "logos": [
+      "/uploads/2025/02/1-1.png",
+      "/uploads/2025/02/2-2.png",
+      "/uploads/2025/02/3-1.png",
+      "/uploads/2025/02/4-1.png",
+      "/uploads/2025/02/5-2.png",
+      "/uploads/2025/02/6-1.png",
+      "/uploads/2025/02/7-1.png",
+      "/uploads/2025/02/8-1.png",
+      "/uploads/2025/02/9-1.png",
+      "/uploads/2025/02/10-1.png",
+      "/uploads/2025/02/11-1.png",
+      "/uploads/2025/02/12-1.png",
+      "/uploads/2025/02/13-1.png",
+      "/uploads/2025/02/14.png",
+      "/uploads/2025/02/15.png",
+      "/uploads/2025/02/16.png",
+      "/uploads/2025/02/17.png",
+      "/uploads/2025/02/18.png",
+      "/uploads/2025/02/19.png",
+      "/uploads/2025/02/20.png",
+      "/uploads/2025/02/21.png",
+      "/uploads/2025/02/22.png",
+      "/uploads/2025/02/23.png",
+      "/uploads/2025/02/24.png"
+    ]
+  }
+}

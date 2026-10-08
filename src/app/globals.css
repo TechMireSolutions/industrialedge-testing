@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+
+  /* Brand Colors Extracted Directly From Logo */
+  --brand-navy: #151838;
+  --brand-navy-light: #1e224d;
+  --brand-teal: #059669;
+  --brand-emerald: #10b981;
+  --brand-cyan: #06b6d4;
+  --brand-blue: #1e428a;
+  --brand-accent: #0ea5e9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-logo {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Infinite Marquee Animation for Partners Carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ========================================================
+   Interactive Cart Button Hover Slide Animation (Uiverse.io inspired)
+   ======================================================== */
+.cart-animated-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cart-animated-btn .btn-text-track,
+.cart-animated-btn .btn-icon-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-animated-btn .btn-text-track {
+  transform: translateY(0%);
+}
+
+.cart-animated-btn .btn-icon-track {
+  transform: translateY(100%);
+}
+
+.cart-animated-btn:hover .btn-text-track {
+  transform: translateY(-100%);
+}
+
+.cart-animated-btn:hover .btn-icon-track {
+  transform: translateY(0%);
+}
+
+/* ========================================================
+   Categories Arrow Slide Button Animation (Uiverse.io)
+   ======================================================== */
+.category-arrow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #151838 0%, #1e428a 100%);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(21, 24, 56, 0.25);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.category-arrow-btn:hover {
+  background: linear-gradient(135deg, #1e224d 0%, #059669 100%);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35);
+  transform: translateY(-1px);
+}
+
+.category-arrow-btn .btn-arrow-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  transition: transform 0.4s ease;
+}
+
+.category-arrow-btn:hover .btn-arrow-icon {
+  transform: translateX(6px);
+}
+
+/* ========================================================
+   Animated Hamburger to Cross Morph (Uiverse.io inspired)
+   ======================================================== */
+.animated-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.animated-hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #151838;
+  border-radius: 9999px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Top bar morph */
+.animated-hamburger.is-open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #059669;
+  transition-delay: 0.1s;
+}
+
+/* Middle bar fade out */
+.animated-hamburger.is-open .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(8px);
+  transition-duration: 0.2s;
+}
+
+/* Bottom bar morph */
+.animated-hamburger.is-open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+  background-color: #059669;
+  transition-delay: 0.1s;
+}

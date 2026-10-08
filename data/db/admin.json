@@ -1,0 +1,10 @@
+[
+  {
+    "id": "admin-1",
+    "email": "admin@industrialedge.pk",
+    "passwordHash": "$2b$10$jhKG2jVPe3sWzJBaFWdS8eL39.W69kpq9BL1fXDDX.ZhredK7Mj3m",
+    "name": "Head Administrator",
+    "role": "Super Admin",
+    "lastLogin": "2026-10-07T07:30:39.621Z"
+  }
+]

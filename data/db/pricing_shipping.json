@@ -1,0 +1,96 @@
+{
+  "currencies": [
+    {
+      "code": "PKR",
+      "name": "Pakistani Rupee",
+      "symbol": "Rs.",
+      "exchangeRate": 1,
+      "isDefault": true,
+      "isActive": true,
+      "formatToken": "{symbol} {amount}"
+    },
+    {
+      "code": "USD",
+      "name": "US Dollar",
+      "symbol": "$",
+      "exchangeRate": 280,
+      "isDefault": false,
+      "isActive": true,
+      "formatToken": "{symbol}{amount}"
+    },
+    {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "exchangeRate": 300,
+      "isDefault": false,
+      "isActive": true,
+      "formatToken": "{symbol}{amount}"
+    },
+    {
+      "code": "AED",
+      "name": "UAE Dirham",
+      "symbol": "AED",
+      "exchangeRate": 76.5,
+      "isDefault": false,
+      "isActive": true,
+      "formatToken": "{symbol} {amount}"
+    }
+  ],
+  "shippingRules": [
+    {
+      "id": "ship-1",
+      "regionName": "Karachi Metro / Local Dispatch",
+      "baseFlatRate": 350,
+      "freeShippingThreshold": 30000,
+      "estimatedDeliveryDays": "Same Day / 24 Hours",
+      "isActive": true
+    },
+    {
+      "id": "ship-2",
+      "regionName": "Sindh Interior (Hyderabad, Sukkur, Larkana)",
+      "baseFlatRate": 650,
+      "freeShippingThreshold": 50000,
+      "estimatedDeliveryDays": "2-3 Business Days",
+      "isActive": true
+    },
+    {
+      "id": "ship-3",
+      "regionName": "Punjab & Islamabad / ICT",
+      "baseFlatRate": 850,
+      "freeShippingThreshold": 60000,
+      "estimatedDeliveryDays": "2-4 Business Days",
+      "isActive": true
+    },
+    {
+      "id": "ship-4",
+      "regionName": "KPK, Balochistan, AJK & Gilgit",
+      "baseFlatRate": 1200,
+      "freeShippingThreshold": 75000,
+      "estimatedDeliveryDays": "3-6 Business Days",
+      "isActive": true
+    }
+  ],
+  "b2bTiers": [
+    {
+      "id": "tier-1",
+      "minQuantity": 5,
+      "maxQuantity": 19,
+      "discountPercentage": 5,
+      "isActive": true
+    },
+    {
+      "id": "tier-2",
+      "minQuantity": 20,
+      "maxQuantity": 49,
+      "discountPercentage": 10,
+      "isActive": true
+    },
+    {
+      "id": "tier-3",
+      "minQuantity": 50,
+      "discountPercentage": 18,
+      "isActive": true
+    }
+  ]
+}

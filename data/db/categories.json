@@ -1,0 +1,50 @@
+[
+  {
+    "id": "electronic-appliances",
+    "name": "Electronics & IT Gear",
+    "slug": "electronic-appliances",
+    "icon": "Cpu",
+    "description": "Industrial computing, measurement electronics, and IT gear.",
+    "subcategories": ["Industrial PCs", "Sensors & Probes", "Power Supplies", "Network Switches"]
+  },
+  {
+    "id": "hardware-tools",
+    "name": "Hardware & Tools",
+    "slug": "hardware-tools",
+    "icon": "Wrench",
+    "description": "Heavy-duty power tools, mechanics sets, and workshop equipment.",
+    "subcategories": ["Cordless Drills", "Hand Tools", "Impact Wrenches", "Rotary Hammers"]
+  },
+  {
+    "id": "office-supplies",
+    "name": "Office & Stationery",
+    "slug": "office-supplies",
+    "icon": "Briefcase",
+    "description": "Corporate stationery, paper supplies, and office ergonomics.",
+    "subcategories": ["Copy Paper", "Desk Accessories", "Office Shredders", "Whiteboards"]
+  },
+  {
+    "id": "safety-equipment",
+    "name": "Safety Gear (PPE)",
+    "slug": "safety-equipment",
+    "icon": "HardHat",
+    "description": "Certified head protection, high-visibility apparel, and safety footwear.",
+    "subcategories": ["Safety Helmets", "High-Vis Vests", "Safety Boots", "Welding Masks"]
+  },
+  {
+    "id": "industrial-chemicals",
+    "name": "Chemicals & Lubricants",
+    "slug": "industrial-chemicals",
+    "icon": "FlaskConical",
+    "description": "Specialized lubricants, degreasers, and industrial compounds.",
+    "subcategories": ["Gear Oils", "Heavy-Duty Degreasers", "Silicone Sealants", "Hydraulic Fluids"]
+  },
+  {
+    "id": "electrical-components",
+    "name": "Electrical & Cabling",
+    "slug": "electrical-components",
+    "icon": "Zap",
+    "description": "Industrial circuit breakers, contactors, switchgear, and cabling.",
+    "subcategories": ["MCCB Breakers", "Armored Power Cables", "AC Contactors", "Thermal Relays"]
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "roles": [
+    {
+      "id": "role-super-admin",
+      "name": "Super Admin",
+      "description": "Full master administrative control over catalog, pricing, orders, and system settings",
+      "permissions": [
+        "products:all",
+        "inventory:all",
+        "orders:all",
+        "rfq:all",
+        "pricing:all",
+        "cms:all",
+        "settings:all",
+        "users:all"
+      ]
+    },
+    {
+      "id": "role-catalog-mgr",
+      "name": "Catalog Manager",
+      "description": "Manages products, categories, SKU auto-generation, media galleries, and CSV imports",
+      "permissions": [
+        "products:all",
+        "inventory:all",
+        "cms:all"
+      ]
+    },
+    {
+      "id": "role-logistics-coord",
+      "name": "Logistics Coordinator",
+      "description": "Handles order processing pipeline, dispatch status updates, and shipping rules",
+      "permissions": [
+        "orders:all",
+        "inventory:read",
+        "pricing:read"
+      ]
+    },
+    {
+      "id": "role-sales-rep",
+      "name": "Sales Representative",
+      "description": "Inspects incoming RFQs, adjusts quoted pricing, and manages customer accounts",
+      "permissions": [
+        "rfq:all",
+        "orders:read",
+        "customers:all"
+      ]
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff-1",
+      "name": "Head Administrator",
+      "email": "admin@industrialedge.pk",
+      "role": "Super Admin",
+      "active": true,
+      "createdAt": "2026-10-07T07:28:59.181Z"
+    },
+    {
+      "id": "staff-2",
+      "name": "Asad Malik (Catalog Lead)",
+      "email": "asad@industrialedge.pk",
+      "role": "Catalog Manager",
+      "active": true,
+      "createdAt": "2026-10-07T07:28:59.181Z"
+    },
+    {
+      "id": "staff-3",
+      "name": "Zainab Raza (B2B Sales Lead)",
+      "email": "zainab@industrialedge.pk",
+      "role": "Sales Representative",
+      "active": true,
+      "createdAt": "2026-10-07T07:28:59.181Z"
+    }
+  ]
+}

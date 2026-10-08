@@ -1,0 +1,41 @@
+[
+  {
+    "id": "cust-1",
+    "email": "procurement@nishat.net",
+    "fullName": "Khurram Shahzad",
+    "companyName": "Nishat Mills Limited",
+    "phone": "+92 321 8472910",
+    "ntnNumber": "0789214-5",
+    "address": "21km Ferozepur Road",
+    "city": "Lahore",
+    "totalOrders": 3,
+    "totalSpend": 1850000,
+    "createdAt": "2026-10-07T07:28:59.168Z"
+  },
+  {
+    "id": "cust-2",
+    "email": "procure@engro.com",
+    "fullName": "Engr. Danish Qureshi",
+    "companyName": "Engro Polymer & Chemicals",
+    "phone": "+92 300 9283741",
+    "ntnNumber": "1482903-8",
+    "address": "Port Qasim Industrial Zone",
+    "city": "Karachi",
+    "totalOrders": 2,
+    "totalSpend": 2420000,
+    "createdAt": "2026-10-07T07:28:59.168Z"
+  },
+  {
+    "id": "cust-3",
+    "email": "supply@fatima-group.com",
+    "fullName": "Tariq Mehmood",
+    "companyName": "Fatima Fertilizer Co.",
+    "phone": "+92 333 1122334",
+    "ntnNumber": "2201948-1",
+    "address": "Mukhtar Garh, Sadiqabad",
+    "city": "Sadiqabad",
+    "totalOrders": 1,
+    "totalSpend": 485000,
+    "createdAt": "2026-10-07T07:28:59.168Z"
+  }
+]

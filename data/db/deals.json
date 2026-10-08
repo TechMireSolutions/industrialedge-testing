@@ -1,0 +1,54 @@
+[
+  {
+    "id": "deal-prod-1",
+    "title": "Heavy-Duty Brushless Cordless Impact Drill Kit 20V",
+    "subtitle": "Industrial grade 20V brushless impact drill with twin 4.0Ah Li-ion batteries, fast smart charger, an...",
+    "badge": "Special Wholesale Offer",
+    "price": 24500,
+    "originalPrice": 28000,
+    "image": "/uploads/2025/03/200.png",
+    "slug": "cordless-impact-drill-kit-20v",
+    "active": true,
+    "order": 1,
+    "createdAt": "2026-10-07T06:20:41.562Z"
+  },
+  {
+    "id": "deal-prod-2",
+    "title": "Commercial High-Efficiency Ceiling Air Conditioner 4-Ton",
+    "subtitle": "Full inverter commercial grade 4-ton cassette AC designed for corporate offices, manufacturing clean...",
+    "badge": "Special Wholesale Offer",
+    "price": 385000,
+    "originalPrice": 420000,
+    "image": "/uploads/2025/03/198.png",
+    "slug": "commercial-ceiling-air-conditioner-4-ton",
+    "active": true,
+    "order": 2,
+    "createdAt": "2026-10-07T06:20:41.563Z"
+  },
+  {
+    "id": "deal-prod-3",
+    "title": "Executive Ergonomic High-Back Breathable Mesh Chair",
+    "subtitle": "Dynamic lumbar support ergonomic chair featuring heavy-duty 4D adjustable armrests, multi-lock recli...",
+    "badge": "Special Wholesale Offer",
+    "price": 32000,
+    "originalPrice": 36500,
+    "image": "/uploads/2025/03/197.png",
+    "slug": "executive-ergonomic-mesh-chair",
+    "active": true,
+    "order": 3,
+    "createdAt": "2026-10-07T06:20:41.563Z"
+  },
+  {
+    "id": "deal-prod-4",
+    "title": "Certified Industrial Safety Helmet with Ratchet Suspension (Class E)",
+    "subtitle": "ANSI Z89.1 and CE certified high-density polyethylene protective hard hat with customizable 6-point ...",
+    "badge": "Special Wholesale Offer",
+    "price": 2450,
+    "originalPrice": 2900,
+    "image": "/uploads/2025/03/199.png",
+    "slug": "industrial-safety-helmet-class-e",
+    "active": true,
+    "order": 4,
+    "createdAt": "2026-10-07T06:20:41.563Z"
+  }
+]

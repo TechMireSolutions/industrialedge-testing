@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rfq-101",
+    "rfqNumber": "RFQ-82914",
+    "companyName": "Nishat Mills Limited (Corporate)",
+    "contactPerson": "Khurram Shahzad",
+    "email": "procurement@nishat.net",
+    "phone": "+92 321 8472910",
+    "ntnNumber": "0789214-5",
+    "deliveryLocation": "Nishat Textile Complex, 21km Ferozepur Road, Lahore",
+    "requiredByDate": "2026-11-15",
+    "status": "Under Review",
+    "notes": "Urgent delivery required for facility expansion. Requesting volume discount.",
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Heavy-Duty Brushless Cordless Impact Drill Kit 20V",
+        "sku": "IE-HAR-TOO-2001",
+        "quantity": 25,
+        "unit": "Kit",
+        "targetBudget": 22000,
+        "quotedUnitPrice": 22500,
+        "quotedSubtotal": 562500,
+        "notes": "Batteries must be certified twin 4.0Ah"
+      },
+      {
+        "productId": "prod-4",
+        "name": "Certified Industrial Safety Helmet with Ratchet Suspension (Class E)",
+        "sku": "IE-SAF-EQU-1004",
+        "quantity": 150,
+        "unit": "Piece",
+        "targetBudget": 1700,
+        "quotedUnitPrice": 1750,
+        "quotedSubtotal": 262500,
+        "notes": "Yellow color for assembly line workers"
+      }
+    ],
+    "subtotalOffered": 825000,
+    "gstAmount": 148500,
+    "totalOffered": 973500,
+    "assignedSales": "Head Administrator",
+    "createdAt": "2026-10-07T07:28:59.165Z",
+    "updatedAt": "2026-10-08T06:35:57.267Z"
+  },
+  {
+    "id": "rfq-102",
+    "rfqNumber": "RFQ-82915",
+    "companyName": "Engro Polymer & Chemicals",
+    "contactPerson": "Engr. Danish Qureshi",
+    "email": "procure@engro.com",
+    "phone": "+92 300 9283741",
+    "ntnNumber": "1482903-8",
+    "deliveryLocation": "Port Qasim Industrial Zone, Karachi",
+    "status": "Submitted",
+    "notes": "Annual maintenance cycle inquiry. Need commercial quotation with STRN.",
+    "items": [
+      {
+        "productId": "prod-2",
+        "name": "Commercial High-Efficiency Ceiling Air Conditioner 4-Ton",
+        "sku": "IE-ELE-APP-4002",
+        "quantity": 4,
+        "unit": "Unit",
+        "targetBudget": 360000,
+        "quotedUnitPrice": 370000,
+        "quotedSubtotal": 1480000
+      }
+    ],
+    "subtotalOffered": 1480000,
+    "gstAmount": 266400,
+    "totalOffered": 1746400,
+    "createdAt": "2026-10-07T07:28:59.165Z",
+    "updatedAt": "2026-10-07T07:28:59.165Z"
+  }
+]
