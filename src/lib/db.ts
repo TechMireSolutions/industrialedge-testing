@@ -255,7 +255,11 @@ let dbPromise: Promise<Database<sqlite3.Database, sqlite3.Statement>> | null = n
 let initPromise: Promise<void> | null = null;
 
 export function getDbPath(): string {
-  return process.env.SQLITE_DB_PATH || path.join(process.cwd(), "data", "industrial_edge.sqlite");
+  const custom = process.env.SQLITE_DB_PATH;
+  if (custom) {
+    return path.isAbsolute(custom) ? custom : path.resolve(/*turbopackIgnore: true*/ process.cwd(), custom);
+  }
+  return path.join(process.cwd(), "data", "industrial_edge.sqlite");
 }
 
 export async function getDb(): Promise<Database<sqlite3.Database, sqlite3.Statement>> {
@@ -270,6 +274,7 @@ export async function getDb(): Promise<Database<sqlite3.Database, sqlite3.Statem
         driver: sqlite3.Database,
       });
 
+      await db.run("PRAGMA busy_timeout = 15000;");
       await db.run("PRAGMA journal_mode = WAL;");
       await db.run("PRAGMA foreign_keys = ON;");
       return db;
@@ -1073,24 +1078,43 @@ function mapCategoryRow(row: any, productCount = 0): CategoryItem {
 
 // ================= PRODUCT METHODS =================
 export async function getProducts(): Promise<Product[]> {
-  await initDb();
-  const db = await getDb();
-  const rows = await db.all("SELECT * FROM products ORDER BY rowid DESC");
-  return rows.map(mapProductRow);
+  try {
+    await initDb();
+    const db = await getDb();
+    const rows = await db.all("SELECT * FROM products ORDER BY rowid DESC");
+    if (rows && rows.length > 0) {
+      return rows.map(mapProductRow);
+    }
+  } catch (err) {
+    console.warn("getProducts database fallback:", err);
+  }
+  return readLegacyJson<Product[]>("products.json", initialProducts);
 }
 
 export async function getProductById(id: string): Promise<Product | null> {
-  await initDb();
-  const db = await getDb();
-  const row = await db.get("SELECT * FROM products WHERE id = ?", [id]);
-  return row ? mapProductRow(row) : null;
+  try {
+    await initDb();
+    const db = await getDb();
+    const row = await db.get("SELECT * FROM products WHERE id = ?", [id]);
+    if (row) return mapProductRow(row);
+  } catch (err) {
+    console.warn("getProductById database fallback:", err);
+  }
+  const products = await getProducts();
+  return products.find((p) => p.id === id) || null;
 }
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  await initDb();
-  const db = await getDb();
-  const row = await db.get("SELECT * FROM products WHERE slug = ?", [slug]);
-  return row ? mapProductRow(row) : null;
+  try {
+    await initDb();
+    const db = await getDb();
+    const row = await db.get("SELECT * FROM products WHERE slug = ?", [slug]);
+    if (row) return mapProductRow(row);
+  } catch (err) {
+    console.warn("getProductBySlug database fallback:", err);
+  }
+  const products = await getProducts();
+  return products.find((p) => p.slug === slug) || null;
 }
 
 export async function createProduct(product: Omit<Product, "id">): Promise<Product> {
