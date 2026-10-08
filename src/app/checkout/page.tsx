@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +16,6 @@ import {
   Trash2,
   Lock
 } from "lucide-react";
-import confetti from "canvas-confetti";
 
 export default function CheckoutPage() {
   const { cart, cartTotal, clearCart } = useCart();
@@ -80,14 +81,18 @@ export default function CheckoutPage() {
         setOrderId(data.orderNumber);
         setOrderPlaced(true);
         clearCart();
-        try {
-          confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-          });
-        } catch {
-          // Ignore
+        if (typeof window !== "undefined") {
+          try {
+            const confettiModule = await import("canvas-confetti");
+            const triggerConfetti = confettiModule.default || confettiModule;
+            triggerConfetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.6 },
+            });
+          } catch {
+            // Ignore confetti errors
+          }
         }
       } else {
         setErrorMsg(data.error || "Failed to process order. Please try again.");
