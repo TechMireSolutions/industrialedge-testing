@@ -8,9 +8,24 @@ export const metadata = {
   description: "Browse certified industrial tools, electronics, PPE, cabling, lubricants and office stationery with real-time wholesale pricing.",
 };
 
-export const dynamic = "force-dynamic";
+interface PageProps {
+  searchParams?: Promise<{ category?: string; q?: string }>;
+}
 
-export default async function Page() {
+export default async function Page({ searchParams }: PageProps) {
+  let initialCategory = "all";
+  let initialQuery = "";
+
+  try {
+    if (searchParams) {
+      const sp = await searchParams;
+      initialCategory = sp?.category || "all";
+      initialQuery = sp?.q || "";
+    }
+  } catch {
+    // build time fallback
+  }
+
   let products: Product[] = [];
   try {
     products = await getProducts();
@@ -24,7 +39,11 @@ export default async function Page() {
 
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-slate-500 font-bold">Loading Catalog...</div>}>
-      <ProductsClient initialProducts={products} />
+      <ProductsClient
+        initialProducts={products}
+        initialCategory={initialCategory}
+        initialQuery={initialQuery}
+      />
     </Suspense>
   );
 }

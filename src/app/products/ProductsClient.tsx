@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
 import { 
   PRODUCTS, 
   CATEGORIES, 
@@ -17,13 +16,16 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   initialProducts?: Product[];
+  initialCategory?: string;
+  initialQuery?: string;
 }
 
-export default function ProductsClient({ initialProducts }: Props) {
+export default function ProductsClient({
+  initialProducts,
+  initialCategory = "all",
+  initialQuery = "",
+}: Props) {
   const allProducts = initialProducts && initialProducts.length > 0 ? initialProducts : PRODUCTS;
-  const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("category") || "all";
-  const initialQuery = searchParams.get("q") || "";
 
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [searchTerm, setSearchTerm] = useState(initialQuery);
